@@ -16,5 +16,9 @@ namespace Практика_0202
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+        }
     }
 }
