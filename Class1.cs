@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,36 +12,36 @@ namespace Практика_0202
     public delegate void LoadFormDotShowHere();
     public class LGPlmrch
     {
-        public event LoadFormDotShowHere SbstvLG;
+        event LoadFormDotShowHere SbstvLG;
         void ShwSbstvLG()
         {
             if (SbstvLG != null)
                 SbstvLG();
         }
-        public LGPlmrch(string login, string password, string sql)
+        public LGPlmrch(string login, string password, string sql, LoadFormDotShowHere lfdsh)
         {
-            CtvFrm(LG(login, Gthshps(password), sql));
+            SbstvLG += lfdsh;
+            CtvFrm(LG(login, Convert.ToInt32(password), sql));
         }
         int Gthshps(string password)
         {
-            PSCPlmrch ps = new PSCPlmrch(password);
-            return ps.PasCrypt;
+            PSCPlmrch.password = password;
+            return PSCPlmrch.PasCrypt;
         }
         int LG(string login, int password, string sql)
         {
             int rowsaff = 0;
             SqlConnection sq = new SqlConnection(sql);
-            SqlCommand cm = new SqlCommand(@"select count(*) from User where Login = @LG and Password = @PS", sq);
+            SqlCommand cm = new SqlCommand(@"select count(*) from dbo.[User] where Login = @LG and Password = @PS", sq);
             cm.Parameters.AddWithValue("@LG", login);
             cm.Parameters.AddWithValue("@PS", password);
             try
             {
-                using (SqlDataReader sr = cm.ExecuteReader())
-                {
-                    rowsaff = (int)cm.ExecuteScalar();
-                }
+                sq.Open();
+                rowsaff = (int)cm.ExecuteScalar();
+                sq.Close();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
@@ -49,18 +50,15 @@ namespace Практика_0202
         void CtvFrm(int strCnt)
         {
             if (strCnt != 0 && strCnt != -1) ShwSbstvLG();
+            else MessageBox.Show("Неправильный логин или пароль.\nПовторите ввод.");
         }
     }
-    public class PSCPlmrch
+    public static class PSCPlmrch
     {
-        string password;
-        public int PasCrypt
+        public static string password;
+        public static int PasCrypt
         {
             get { return password.GetHashCode(); }
-        }
-        public PSCPlmrch(string password)
-        {
-            this.password = password;
         }
     }
     public class RGPlmrch
@@ -71,23 +69,22 @@ namespace Практика_0202
         }
         int Gthshps(string password)
         {
-            PSCPlmrch ps = new PSCPlmrch(password);
-            return ps.PasCrypt;
+            PSCPlmrch.password = password;
+            return PSCPlmrch.PasCrypt;
         }
         bool RGCheck(string login, int password, string sql)
         {
             bool ret = false;
             int rowsaff = 0;
             SqlConnection sq = new SqlConnection(sql);
-            SqlCommand cm = new SqlCommand(@"select count(*) from User where Login = @LG or Password = @PS", sq);
+            SqlCommand cm = new SqlCommand(@"select count(*) from dbo.[User] where Login = @LG or Password = @PS", sq);
             cm.Parameters.AddWithValue("@LG", login);
             cm.Parameters.AddWithValue("@PS", password);
             try
             {
-                using (SqlDataReader sr = cm.ExecuteReader())
-                {
-                    rowsaff = (int)cm.ExecuteScalar();
-                }
+                sq.Open();
+                rowsaff = (int)cm.ExecuteScalar();
+                sq.Close();
             }
             catch (Exception e)
             {
@@ -100,13 +97,12 @@ namespace Практика_0202
         {
             int lastind = -1;
             SqlConnection sq = new SqlConnection(sql);
-            SqlCommand cm = new SqlCommand(@"select ID from User", sq);
+            SqlCommand cm = new SqlCommand(@"select ID from dbo.[User]", sq);
             try
             {
-                using (SqlDataReader sr = cm.ExecuteReader())
-                {
-                    lastind = (int)cm.ExecuteScalar();
-                }
+                sq.Open();
+                lastind = (int)cm.ExecuteScalar();
+                sq.Close();
             }
             catch (Exception e)
             {
@@ -116,11 +112,11 @@ namespace Практика_0202
         }
         void UsReg(string surname, string name, string patronus, string login, int password, string secret_word, int access_lvl, string sql)
         {
-            if(RGCheck(login, password, sql))
+            if (!RGCheck(login, password, sql))
             {
                 int id = LstUsNmbr(sql);
                 SqlConnection sq = new SqlConnection(sql);
-                SqlCommand cm = new SqlCommand(@"insert into User values (@id, @sur, @nam, @patr, @log, @pas, @sw, @acc) ", sq);
+                SqlCommand cm = new SqlCommand(@"insert into dbo.[User] values (@id, @sur, @nam, @patr, @log, @pas, @sw, @acc) ", sq);
                 cm.Parameters.AddWithValue("@id", id);
                 cm.Parameters.AddWithValue("@sur", surname);
                 cm.Parameters.AddWithValue("@nam", name);
@@ -131,21 +127,27 @@ namespace Практика_0202
                 cm.Parameters.AddWithValue("@acc", access_lvl);
                 try
                 {
-                    using (SqlDataReader sr = cm.ExecuteReader())
-                    {
-                        cm.ExecuteNonQuery();
-                        MessageBox.Show("Регистрация удачна");
-                    }
+                    sq.Open();
+                    cm.ExecuteNonQuery();
+                    MessageBox.Show("Регистрация удачна");
+                    sq.Close();
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("Регистрация неудачна из-за следующей ошибки:\n"+e.Message);
+                    MessageBox.Show("Регистрация неудачна из-за следующей ошибки:\n" + e.Message);
                 }
             }
             else
             {
                 MessageBox.Show("Такой логин или пароль уже зарегистрирован");
             }
+        }
+    }
+    public static class CnStrPlmrch
+    {
+        public static string sql
+        {
+            get { return @"Data Source=sql;Initial Catalog=2021-МДК02.02-УП-Паламарчук;Integrated Security=True"; }
         }
     }
 }
