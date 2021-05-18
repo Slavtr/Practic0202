@@ -21,7 +21,7 @@ namespace Практика_0202
         public LGPlmrch(string login, string password, string sql, LoadFormDotShowHere lfdsh)
         {
             SbstvLG += lfdsh;
-            CtvFrm(LG(login, Convert.ToInt32(password), sql));
+            CtvFrm(LG(login, Gthshps(password), sql));
         }
         int Gthshps(string password)
         {
