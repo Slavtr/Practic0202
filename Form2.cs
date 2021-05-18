@@ -32,6 +32,12 @@ namespace Практика_0202
                 MessageBox.Show(ex.Message);
             }
         }
-
+        private void Form2_Load(object sender, EventArgs e)
+        {
+        }
+        private void Form2_FormClosed(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

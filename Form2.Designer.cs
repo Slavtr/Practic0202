@@ -190,6 +190,8 @@ namespace Практика_0202
             this.Controls.Add(this.textBox1);
             this.Name = "Form2";
             this.Text = "Регистрация";
+            this.Load += new System.EventHandler(this.Form2_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

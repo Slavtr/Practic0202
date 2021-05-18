@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
@@ -148,6 +149,23 @@ namespace Практика_0202
         public static string sql
         {
             get { return @"Data Source=sql;Initial Catalog=2021-МДК02.02-УП-Паламарчук;Integrated Security=True"; }
+        }
+        public static string xcl
+        {
+            get { return string.Format("Provider=Microsoft.ACE.OLEDB.12.0; Data Source = Дневник.xlsx;Extended Properties=\"Excel 12.0 Xml;HDR=YES\""); }
+        }
+    }
+    public static class XCLPlmrch
+    {
+        public static DataSet ZPDgv(string xcl, int sheet)
+        {
+            DataSet ds = new DataSet("EXCEL");
+            System.Data.OleDb.OleDbConnection cn = new System.Data.OleDb.OleDbConnection(xcl);
+            cn.Open();
+            System.Data.OleDb.OleDbDataAdapter da = new System.Data.OleDb.OleDbDataAdapter(@"select * from [Sheet" + sheet + "$]", cn);
+            da.Fill(ds);
+            cn.Close();
+            return ds;
         }
     }
 }
