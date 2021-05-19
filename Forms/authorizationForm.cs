@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,17 +13,16 @@ namespace WindowsFormsApp1.Forms
 {
     public partial class authorizationForm : Form
     {
+        ArrayList texts = new ArrayList();
         public authorizationForm()
         {
             InitializeComponent();
+            texts.Add(emailTextBox.Text);
+            texts.Add(passTextBox.Text);
         }
+
 
         private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -32,5 +32,6 @@ namespace WindowsFormsApp1.Forms
             new menuForm().Show();
             this.Hide();
         }
+
     }
 }
