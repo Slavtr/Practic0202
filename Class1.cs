@@ -40,7 +40,10 @@ namespace Практика_0202
             try
             {
                 sq.Open();
-                rowsaff = (int)cm.ExecuteScalar();
+                if(cm.ExecuteScalar()!= null)
+                {
+                    rowsaff = (int)cm.ExecuteScalar();
+                }
                 sq.Close();
             }
             catch (Exception e)
@@ -100,7 +103,7 @@ namespace Практика_0202
         {
             int lastind = -1;
             SqlConnection sq = new SqlConnection(sql);
-            SqlCommand cm = new SqlCommand(@"select ID from dbo.[User]", sq);
+            SqlCommand cm = new SqlCommand(@"select top 1 ID from dbo.[User] order by ID DESC", sq);
             try
             {
                 sq.Open();
@@ -166,7 +169,7 @@ namespace Практика_0202
         public List<string> RtStrMs(string sql)
         {
             SqlConnection sq = new SqlConnection(sql);
-            SqlDataAdapter cm = new SqlDataAdapter(@"select * from dbo.[Training]", sql);
+            SqlDataAdapter cm = new SqlDataAdapter(@"select * from dbo.[Training]", sq);
             DataTable dt = new DataTable();
             try
             {
@@ -185,10 +188,12 @@ namespace Практика_0202
             }
             return ls;
         }
-        public DataTable FllDGV(string sql)
+        public DataTable FllDGV(string sql, int user)
         {
             SqlConnection sq = new SqlConnection(sql);
-            SqlDataAdapter cm = new SqlDataAdapter(@"select * from dbo.[TrDiary]", sql);
+            SqlCommand c = new SqlCommand(@"select * from dbo.[TrDiary] where UsID = @U", sq);
+            c.Parameters.AddWithValue("@U", user);
+            SqlDataAdapter cm = new SqlDataAdapter(c);
             DataTable dt = new DataTable();
             try
             {
@@ -201,6 +206,86 @@ namespace Практика_0202
                 MessageBox.Show(e.Message);
             }
             return dt;
+        }
+        public string FllPsn(string sql, string train_name)
+        {
+            string ret = "";
+            SqlConnection sq = new SqlConnection(sql);
+            SqlCommand cm = new SqlCommand(@"Select Describ from dbo.[Training] where Name = @N", sq);
+            cm.Parameters.AddWithValue("@N", train_name);
+
+            try
+            {
+                sq.Open();
+                ret = (string)cm.ExecuteScalar();
+                sq.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            return ret;
+        }
+    }
+    public class ZpsNTrn
+    {
+        public bool chk(string dtSt, string tm, string sql)
+        {
+            int rowsaff = 0;
+            SqlConnection sq = new SqlConnection(sql);
+            SqlCommand cm = new SqlCommand(@"Select count(*) from dbo.[Timetable] where Date = @Dt and Time = @Tm", sq);
+            cm.Parameters.AddWithValue("@Dt", dtSt);
+            cm.Parameters.AddWithValue("@Tm", tm);
+            try
+            {
+                sq.Open();
+                rowsaff = (int)cm.ExecuteScalar();
+                sq.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            if (rowsaff != -1 && rowsaff != 0) return true;
+            else return false;
+        }
+        int lstid(string sql)
+        {
+            int ret = -1;
+            SqlConnection sq = new SqlConnection(sql);
+            SqlCommand cm = new SqlCommand(@"select top 1 ID from dbo.[Timetable] order by ID DESC", sq);
+            try
+            {
+                sq.Open();
+                ret = (int)cm.ExecuteScalar();
+                sq.Close();
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            ret++;
+            return ret;
+        }
+        public void Zps(string dtSt, string tm, string sql, int user)
+        {
+            SqlConnection sq = new SqlConnection(sql);
+            SqlCommand cm = new SqlCommand(@"Insert into dbo.[Timetable] values (@ID, @UsID, @Date, @Time)", sq);
+            cm.Parameters.AddWithValue("@ID", lstid(sql));
+            cm.Parameters.AddWithValue("@UsID", user);
+            cm.Parameters.AddWithValue("@Date", dtSt);
+            cm.Parameters.AddWithValue("@Time", tm);
+            try
+            {
+                sq.Open();
+                cm.ExecuteNonQuery();
+                sq.Close();
+                MessageBox.Show("Запись успешна");
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
     }
 }
