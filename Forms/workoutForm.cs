@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,19 +13,19 @@ namespace WindowsFormsApp1.Forms
 {
     public partial class workoutForm : Form
     {
+        ArrayList images = new ArrayList();
         private int countOfWorkouts = 1;
         public workoutForm()
         {
+            CreateBitmapList();
             InitializeComponent();
         }
 
-        //private void CreateObjectList()
-        
-        private void guna2TrackBar1_Scroll(object sender, ScrollEventArgs e)
+        private ArrayList CreateBitmapList()
         {
-
-            guna2TrackBar1.Value = 70;
-
+            images.Add(Properties.Resources.calendar__v1);
+            return images;
         }
+       
     }
 }

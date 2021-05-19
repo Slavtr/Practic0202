@@ -8,16 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class menuForm : Form
     {
         private Guna2GradientButton currentButton;
-        private Guna2TrackBar currentTrackBar;
         private Form activeForm;
         
-        public Form1()
+        public menuForm()
         {
             InitializeComponent();
         }
@@ -80,6 +80,11 @@ namespace WindowsFormsApp1
         private void aboutusButton_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.aboutusForm(), sender);
+        }
+
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
