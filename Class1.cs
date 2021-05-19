@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -31,9 +32,9 @@ namespace Практика_0202
         }
         int LG(string login, int password, string sql)
         {
-            int rowsaff = 0;
+            int rowsaff = -1;
             SqlConnection sq = new SqlConnection(sql);
-            SqlCommand cm = new SqlCommand(@"select count(*) from dbo.[User] where Login = @LG and Password = @PS", sq);
+            SqlCommand cm = new SqlCommand(@"select ID from dbo.[User] where Login = @LG and Password = @PS", sq);
             cm.Parameters.AddWithValue("@LG", login);
             cm.Parameters.AddWithValue("@PS", password);
             try
@@ -46,11 +47,12 @@ namespace Практика_0202
             {
                 MessageBox.Show(e.Message);
             }
+            UsID.ID = rowsaff;
             return rowsaff;
         }
         void CtvFrm(int strCnt)
         {
-            if (strCnt != 0 && strCnt != -1) ShwSbstvLG();
+            if (strCnt != -1) ShwSbstvLG();
             else MessageBox.Show("Неправильный логин или пароль.\nПовторите ввод.");
         }
     }
@@ -152,20 +154,53 @@ namespace Практика_0202
         }
         public static string xcl
         {
-            get { return string.Format("Provider=Microsoft.ACE.OLEDB.12.0; Data Source = Дневник.xlsx;Extended Properties=\"Excel 12.0 Xml;HDR=YES\""); }
+            get { return ""; }
         }
     }
-    public static class XCLPlmrch
+    public static class UsID
     {
-        public static DataSet ZPDgv(string xcl, int sheet)
+        public static int ID;
+    }
+    public class ZpLstBxPsn
+    {
+        public List<string> RtStrMs(string sql)
         {
-            DataSet ds = new DataSet("EXCEL");
-            System.Data.OleDb.OleDbConnection cn = new System.Data.OleDb.OleDbConnection(xcl);
-            cn.Open();
-            System.Data.OleDb.OleDbDataAdapter da = new System.Data.OleDb.OleDbDataAdapter(@"select * from [Sheet" + sheet + "$]", cn);
-            da.Fill(ds);
-            cn.Close();
-            return ds;
+            SqlConnection sq = new SqlConnection(sql);
+            SqlDataAdapter cm = new SqlDataAdapter(@"select * from dbo.[Training]", sql);
+            DataTable dt = new DataTable();
+            try
+            {
+                sq.Open();
+                cm.Fill(dt);
+                sq.Close();
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            List<string> ls = new List<string>();
+            foreach(DataRow dr in dt.Rows)
+            {
+                ls.Add(dr[1].ToString());
+            }
+            return ls;
+        }
+        public DataTable FllDGV(string sql)
+        {
+            SqlConnection sq = new SqlConnection(sql);
+            SqlDataAdapter cm = new SqlDataAdapter(@"select * from dbo.[TrDiary]", sql);
+            DataTable dt = new DataTable();
+            try
+            {
+                sq.Open();
+                cm.Fill(dt);
+                sq.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            return dt;
         }
     }
 }

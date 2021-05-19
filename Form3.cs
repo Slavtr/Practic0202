@@ -29,11 +29,6 @@ namespace Практика_0202
             Application.Exit();
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
             groupBox1.Visible = false;
@@ -49,6 +44,10 @@ namespace Практика_0202
             groupBox2.Visible = false;
             groupBox3.Visible = false;
             groupBox4.Visible = false;
+            ZpLstBxPsn zp = new ZpLstBxPsn();
+            listBox1.Items.Clear();
+            listBox1.DataSource = zp.RtStrMs(CnStrPlmrch.sql);
+            dataGridView1.DataSource = zp.FllDGV(CnStrPlmrch.sql);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -67,10 +66,9 @@ namespace Практика_0202
             groupBox4.Visible = false;
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DataSet ds = XCLPlmrch.ZPDgv(CnStrPlmrch.xcl, 1);
-            dataGridView1.DataSource = ds.Tables[0];
+
         }
     }
 }
