@@ -30,23 +30,38 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GradientButton3 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.aboutusButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.calendarButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.workoutButton = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2TrackBar1 = new Guna.UI2.WinForms.Guna2TrackBar();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.table = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Номер = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Упражнение = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Цель = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ДопВес = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.КолВоПодходов = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.П1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.П2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.П3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -59,6 +74,9 @@ namespace WindowsFormsApp1
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.DimGray;
+            this.guna2Panel1.Controls.Add(this.guna2Button2);
+            this.guna2Panel1.Controls.Add(this.guna2Separator1);
+            this.guna2Panel1.Controls.Add(this.guna2Button1);
             this.guna2Panel1.Controls.Add(this.guna2GradientButton3);
             this.guna2Panel1.Controls.Add(this.aboutusButton);
             this.guna2Panel1.Controls.Add(this.calendarButton);
@@ -75,7 +93,7 @@ namespace WindowsFormsApp1
             // 
             this.guna2GradientButton3.Animated = true;
             this.guna2GradientButton3.CheckedState.Parent = this.guna2GradientButton3;
-            this.guna2GradientButton3.CustomImages.Image = global::WindowsFormsApp1.Properties.Resources.flex_biceps;
+            this.guna2GradientButton3.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton3.CustomImages.Image")));
             this.guna2GradientButton3.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton3.CustomImages.ImageSize = new System.Drawing.Size(35, 35);
             this.guna2GradientButton3.CustomImages.Parent = this.guna2GradientButton3;
@@ -103,7 +121,7 @@ namespace WindowsFormsApp1
             // 
             this.aboutusButton.Animated = true;
             this.aboutusButton.CheckedState.Parent = this.aboutusButton;
-            this.aboutusButton.CustomImages.Image = global::WindowsFormsApp1.Properties.Resources.flex_biceps;
+            this.aboutusButton.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("aboutusButton.CustomImages.Image")));
             this.aboutusButton.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.aboutusButton.CustomImages.ImageSize = new System.Drawing.Size(35, 35);
             this.aboutusButton.CustomImages.Parent = this.aboutusButton;
@@ -131,7 +149,7 @@ namespace WindowsFormsApp1
             // 
             this.calendarButton.Animated = true;
             this.calendarButton.CheckedState.Parent = this.calendarButton;
-            this.calendarButton.CustomImages.Image = global::WindowsFormsApp1.Properties.Resources.calendar__v1;
+            this.calendarButton.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("calendarButton.CustomImages.Image")));
             this.calendarButton.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.calendarButton.CustomImages.ImageSize = new System.Drawing.Size(35, 35);
             this.calendarButton.CustomImages.Parent = this.calendarButton;
@@ -159,7 +177,7 @@ namespace WindowsFormsApp1
             // 
             this.workoutButton.Animated = true;
             this.workoutButton.CheckedState.Parent = this.workoutButton;
-            this.workoutButton.CustomImages.Image = global::WindowsFormsApp1.Properties.Resources.sportbag;
+            this.workoutButton.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("workoutButton.CustomImages.Image")));
             this.workoutButton.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.workoutButton.CustomImages.ImageSize = new System.Drawing.Size(35, 35);
             this.workoutButton.CustomImages.Parent = this.workoutButton;
@@ -181,17 +199,6 @@ namespace WindowsFormsApp1
             this.workoutButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.workoutButton.TextOffset = new System.Drawing.Point(60, 0);
             this.workoutButton.Click += new System.EventHandler(this.guna2GradientButton1_Click);
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.Image = global::WindowsFormsApp1.Properties.Resources.logo_text;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(0, 12);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.ShadowDecoration.Parent = this.guna2PictureBox2;
-            this.guna2PictureBox2.Size = new System.Drawing.Size(256, 115);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 1;
-            this.guna2PictureBox2.TabStop = false;
             // 
             // guna2ControlBox1
             // 
@@ -222,11 +229,13 @@ namespace WindowsFormsApp1
             // 
             // guna2GradientPanel1
             // 
-            this.guna2GradientPanel1.BackColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(309, 358);
+            this.guna2GradientPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(290, 358);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(300, 235);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(230, 230);
             this.guna2GradientPanel1.TabIndex = 3;
             // 
             // guna2TrackBar1
@@ -234,52 +243,209 @@ namespace WindowsFormsApp1
             this.guna2TrackBar1.FillColor = System.Drawing.Color.Silver;
             this.guna2TrackBar1.HoverState.Parent = this.guna2TrackBar1;
             this.guna2TrackBar1.IndicateFocus = false;
-            this.guna2TrackBar1.Location = new System.Drawing.Point(309, 290);
+            this.guna2TrackBar1.Location = new System.Drawing.Point(290, 313);
             this.guna2TrackBar1.Name = "guna2TrackBar1";
-            this.guna2TrackBar1.Size = new System.Drawing.Size(300, 23);
+            this.guna2TrackBar1.Size = new System.Drawing.Size(230, 23);
             this.guna2TrackBar1.TabIndex = 4;
             this.guna2TrackBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.BackColor = System.Drawing.Color.DarkGray;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(309, 55);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(290, 55);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(300, 200);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(230, 230);
             this.guna2PictureBox1.TabIndex = 5;
             this.guna2PictureBox1.TabStop = false;
             // 
-            // guna2DateTimePicker1
+            // guna2PictureBox2
             // 
-            this.guna2DateTimePicker1.CheckedState.Parent = this.guna2DateTimePicker1;
-            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.Silver;
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2DateTimePicker1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker1.HoverState.Parent = this.guna2DateTimePicker1;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(668, 55);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.ShadowDecoration.Parent = this.guna2DateTimePicker1;
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(200, 36);
-            this.guna2DateTimePicker1.TabIndex = 6;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2021, 5, 18, 13, 5, 1, 134);
+            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
+            this.guna2PictureBox2.Location = new System.Drawing.Point(0, 12);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.ShadowDecoration.Parent = this.guna2PictureBox2;
+            this.guna2PictureBox2.Size = new System.Drawing.Size(256, 115);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 1;
+            this.guna2PictureBox2.TabStop = false;
             // 
-            // guna2ContextMenuStrip1
+            // guna2Button1
             // 
-            this.guna2ContextMenuStrip1.Name = "guna2ContextMenuStrip1";
-            this.guna2ContextMenuStrip1.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.guna2ContextMenuStrip1.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
-            this.guna2ContextMenuStrip1.RenderStyle.ColorTable = null;
-            this.guna2ContextMenuStrip1.RenderStyle.RoundedEdges = true;
-            this.guna2ContextMenuStrip1.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
-            this.guna2ContextMenuStrip1.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.guna2ContextMenuStrip1.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.guna2ContextMenuStrip1.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
-            this.guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            this.guna2ContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2Button1.CheckedState.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Underline);
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.HoverState.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Underline);
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Location = new System.Drawing.Point(170, 592);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.PressedColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.PressedDepth = 0;
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(73, 36);
+            this.guna2Button1.TabIndex = 6;
+            this.guna2Button1.Text = "Выйти";
+            // 
+            // guna2Separator1
+            // 
+            this.guna2Separator1.Location = new System.Drawing.Point(1, 585);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(242, 10);
+            this.guna2Separator1.TabIndex = 7;
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2Button2.CheckedState.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Underline);
+            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
+            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
+            this.guna2Button2.Enabled = false;
+            this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button2.HoverState.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Underline);
+            this.guna2Button2.HoverState.Parent = this.guna2Button2;
+            this.guna2Button2.Location = new System.Drawing.Point(12, 592);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.PressedColor = System.Drawing.Color.Transparent;
+            this.guna2Button2.PressedDepth = 0;
+            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
+            this.guna2Button2.Size = new System.Drawing.Size(143, 36);
+            this.guna2Button2.TabIndex = 8;
+            this.guna2Button2.Text = "UserName";
+            // 
+            // table
+            // 
+            this.table.AllowUserToAddRows = false;
+            this.table.AllowUserToDeleteRows = false;
+            this.table.AllowUserToResizeColumns = false;
+            this.table.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
+            this.table.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.table.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.table.BackgroundColor = System.Drawing.Color.White;
+            this.table.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.table.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.table.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.table.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Номер,
+            this.Упражнение,
+            this.Цель,
+            this.ДопВес,
+            this.КолВоПодходов,
+            this.П1,
+            this.П2,
+            this.П3});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.table.DefaultCellStyle = dataGridViewCellStyle3;
+            this.table.EnableHeadersVisualStyles = false;
+            this.table.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(224)))), ((int)(((byte)(216)))));
+            this.table.Location = new System.Drawing.Point(567, 53);
+            this.table.Name = "table";
+            this.table.ReadOnly = true;
+            this.table.RowHeadersVisible = false;
+            this.table.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.table.Size = new System.Drawing.Size(467, 540);
+            this.table.TabIndex = 8;
+            this.table.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.GreenSea;
+            this.table.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(218)))));
+            this.table.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.table.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.table.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.table.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.table.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.table.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(224)))), ((int)(((byte)(216)))));
+            this.table.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            this.table.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.table.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.table.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.table.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.table.ThemeStyle.HeaderStyle.Height = 40;
+            this.table.ThemeStyle.ReadOnly = true;
+            this.table.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(235)))), ((int)(((byte)(230)))));
+            this.table.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.table.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.table.ThemeStyle.RowsStyle.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.table.ThemeStyle.RowsStyle.Height = 22;
+            this.table.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(191)))), ((int)(((byte)(173)))));
+            this.table.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            // 
+            // Номер
+            // 
+            this.Номер.HeaderText = "1";
+            this.Номер.Name = "Номер";
+            this.Номер.ReadOnly = true;
+            this.Номер.Width = 40;
+            // 
+            // Упражнение
+            // 
+            this.Упражнение.HeaderText = "Упражнение";
+            this.Упражнение.Name = "Упражнение";
+            this.Упражнение.ReadOnly = true;
+            this.Упражнение.Width = 111;
+            // 
+            // Цель
+            // 
+            this.Цель.HeaderText = "Цель";
+            this.Цель.Name = "Цель";
+            this.Цель.ReadOnly = true;
+            this.Цель.Width = 63;
+            // 
+            // ДопВес
+            // 
+            this.ДопВес.HeaderText = "Доп. вес";
+            this.ДопВес.Name = "ДопВес";
+            this.ДопВес.ReadOnly = true;
+            this.ДопВес.Width = 78;
+            // 
+            // КолВоПодходов
+            // 
+            this.КолВоПодходов.HeaderText = "Кол-во подходов";
+            this.КолВоПодходов.Name = "КолВоПодходов";
+            this.КолВоПодходов.ReadOnly = true;
+            this.КолВоПодходов.Width = 129;
+            // 
+            // П1
+            // 
+            this.П1.HeaderText = "П1";
+            this.П1.Name = "П1";
+            this.П1.ReadOnly = true;
+            this.П1.Width = 50;
+            // 
+            // П2
+            // 
+            this.П2.HeaderText = "П2";
+            this.П2.Name = "П2";
+            this.П2.ReadOnly = true;
+            this.П2.Width = 50;
+            // 
+            // П3
+            // 
+            this.П3.HeaderText = "П3";
+            this.П3.Name = "П3";
+            this.П3.ReadOnly = true;
+            this.П3.Width = 50;
             // 
             // Form1
             // 
@@ -287,20 +453,21 @@ namespace WindowsFormsApp1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1080, 640);
-            this.Controls.Add(this.guna2DateTimePicker1);
+            this.Controls.Add(this.table);
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.guna2TrackBar1);
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.guna2ControlBox2);
             this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.guna2Panel1);
-            this.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";
             this.guna2Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -317,10 +484,20 @@ namespace WindowsFormsApp1
         private Guna.UI2.WinForms.Guna2GradientButton calendarButton;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2TrackBar guna2TrackBar1;
-        private Guna.UI2.WinForms.Guna2ContextMenuStrip guna2ContextMenuStrip1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2DataGridView table;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Номер;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Упражнение;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Цель;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ДопВес;
+        private System.Windows.Forms.DataGridViewTextBoxColumn КолВоПодходов;
+        private System.Windows.Forms.DataGridViewTextBoxColumn П1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn П2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn П3;
     }
 }
 
