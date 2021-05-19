@@ -85,6 +85,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\sportbag.png" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\logo text.png" />
+    <None Include="Resources\flex-biceps.png" />
+    <None Include="Resources\dumbbell.png" />
+    <None Include="Resources\calendar--v1.png" />
     <None Include="bin\Debug\icons\logo.png" />
     <None Include="Resources\logo.bmp" />
     <None Include="bin\Debug\icons\logo text.png" />

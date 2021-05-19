@@ -38,8 +38,15 @@ namespace WindowsFormsApp1
             this.workoutButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2TrackBar1 = new Guna.UI2.WinForms.Guna2TrackBar();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -61,7 +68,7 @@ namespace WindowsFormsApp1
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(246, 614);
+            this.guna2Panel1.Size = new System.Drawing.Size(246, 640);
             this.guna2Panel1.TabIndex = 0;
             // 
             // guna2GradientButton3
@@ -196,15 +203,95 @@ namespace WindowsFormsApp1
             this.guna2ControlBox1.Location = new System.Drawing.Point(1040, 8);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
-            this.guna2ControlBox1.Size = new System.Drawing.Size(31, 29);
+            this.guna2ControlBox1.Size = new System.Drawing.Size(30, 30);
             this.guna2ControlBox1.TabIndex = 1;
+            // 
+            // guna2ControlBox2
+            // 
+            this.guna2ControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox2.HoverState.Parent = this.guna2ControlBox2;
+            this.guna2ControlBox2.IconColor = System.Drawing.Color.White;
+            this.guna2ControlBox2.Location = new System.Drawing.Point(1004, 8);
+            this.guna2ControlBox2.Name = "guna2ControlBox2";
+            this.guna2ControlBox2.ShadowDecoration.Parent = this.guna2ControlBox2;
+            this.guna2ControlBox2.Size = new System.Drawing.Size(30, 30);
+            this.guna2ControlBox2.TabIndex = 2;
+            // 
+            // guna2GradientPanel1
+            // 
+            this.guna2GradientPanel1.BackColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(309, 358);
+            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
+            this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(300, 235);
+            this.guna2GradientPanel1.TabIndex = 3;
+            // 
+            // guna2TrackBar1
+            // 
+            this.guna2TrackBar1.FillColor = System.Drawing.Color.Silver;
+            this.guna2TrackBar1.HoverState.Parent = this.guna2TrackBar1;
+            this.guna2TrackBar1.IndicateFocus = false;
+            this.guna2TrackBar1.Location = new System.Drawing.Point(309, 290);
+            this.guna2TrackBar1.Name = "guna2TrackBar1";
+            this.guna2TrackBar1.Size = new System.Drawing.Size(300, 23);
+            this.guna2TrackBar1.TabIndex = 4;
+            this.guna2TrackBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.DarkGray;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(309, 55);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
+            this.guna2PictureBox1.Size = new System.Drawing.Size(300, 200);
+            this.guna2PictureBox1.TabIndex = 5;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // guna2DateTimePicker1
+            // 
+            this.guna2DateTimePicker1.CheckedState.Parent = this.guna2DateTimePicker1;
+            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.Silver;
+            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2DateTimePicker1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.guna2DateTimePicker1.HoverState.Parent = this.guna2DateTimePicker1;
+            this.guna2DateTimePicker1.Location = new System.Drawing.Point(668, 55);
+            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
+            this.guna2DateTimePicker1.ShadowDecoration.Parent = this.guna2DateTimePicker1;
+            this.guna2DateTimePicker1.Size = new System.Drawing.Size(200, 36);
+            this.guna2DateTimePicker1.TabIndex = 6;
+            this.guna2DateTimePicker1.Value = new System.DateTime(2021, 5, 18, 13, 5, 1, 134);
+            // 
+            // guna2ContextMenuStrip1
+            // 
+            this.guna2ContextMenuStrip1.Name = "guna2ContextMenuStrip1";
+            this.guna2ContextMenuStrip1.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.guna2ContextMenuStrip1.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
+            this.guna2ContextMenuStrip1.RenderStyle.ColorTable = null;
+            this.guna2ContextMenuStrip1.RenderStyle.RoundedEdges = true;
+            this.guna2ContextMenuStrip1.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
+            this.guna2ContextMenuStrip1.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.guna2ContextMenuStrip1.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.guna2ContextMenuStrip1.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
+            this.guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.guna2ContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(1080, 614);
+            this.ClientSize = new System.Drawing.Size(1080, 640);
+            this.Controls.Add(this.guna2DateTimePicker1);
+            this.Controls.Add(this.guna2PictureBox1);
+            this.Controls.Add(this.guna2TrackBar1);
+            this.Controls.Add(this.guna2GradientPanel1);
+            this.Controls.Add(this.guna2ControlBox2);
             this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.guna2Panel1);
             this.ForeColor = System.Drawing.SystemColors.ActiveBorder;
@@ -213,6 +300,7 @@ namespace WindowsFormsApp1
             this.Text = "Form1";
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -227,6 +315,12 @@ namespace WindowsFormsApp1
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton3;
         private Guna.UI2.WinForms.Guna2GradientButton aboutusButton;
         private Guna.UI2.WinForms.Guna2GradientButton calendarButton;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2TrackBar guna2TrackBar1;
+        private Guna.UI2.WinForms.Guna2ContextMenuStrip guna2ContextMenuStrip1;
     }
 }
 
