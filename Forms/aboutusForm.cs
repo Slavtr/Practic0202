@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace WindowsFormsApp1.Forms
 {
-    public partial class Form1 : Form
+    public partial class aboutusForm : Form
     {
-        public Form1()
+        public aboutusForm()
         {
             InitializeComponent();
-        }
-
-        private void guna2GradientButton1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

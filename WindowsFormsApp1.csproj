@@ -49,16 +49,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\aboutusForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\aboutusForm.Designer.cs">
+      <DependentUpon>aboutusForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\calendarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\calendarForm.Designer.cs">
+      <DependentUpon>calendarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\menuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\menuForm.Designer.cs">
+      <DependentUpon>menuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\workoutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\workoutForm.Designer.cs">
+      <DependentUpon>workoutForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\aboutusForm.resx">
+      <DependentUpon>aboutusForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\calendarForm.resx">
+      <DependentUpon>calendarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\menuForm.resx">
+      <DependentUpon>menuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\workoutForm.resx">
+      <DependentUpon>workoutForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -91,18 +118,10 @@
     <None Include="Resources\flex-biceps.png" />
     <None Include="Resources\dumbbell.png" />
     <None Include="Resources\calendar--v1.png" />
-    <None Include="bin\Debug\icons\logo.png" />
     <None Include="Resources\logo.bmp" />
-    <None Include="bin\Debug\icons\logo text.png" />
-    <None Include="bin\Debug\icons\dumbbell--v1.png" />
-    <None Include="bin\Debug\icons\logo.jpg" />
-    <None Include="bin\Debug\icons\dumbbell.png" />
-    <None Include="bin\Debug\icons\calendare.png" />
-    <None Include="bin\Debug\icons\muscle.png" />
-    <None Include="bin\Debug\icons\sportbag.png" />
-    <None Include="bin\Debug\icons\calendar--v1.png" />
-    <None Include="bin\Debug\icons\flex-biceps.png" />
-    <Content Include="dumbbell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
