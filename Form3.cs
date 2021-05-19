@@ -77,6 +77,8 @@ namespace Практика_0202
             groupBox2.Visible = false;
             groupBox3.Visible = true;
             groupBox4.Visible = false;
+
+            CchZp cz = new CchZp(CnStrPlmrch.sql);
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)

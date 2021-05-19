@@ -288,4 +288,86 @@ namespace Практика_0202
             }
         }
     }
+    public class CchZp
+    {
+        public int[] IDMs;
+        public CchZp(string sql)
+        {
+            this.IDMs = IDMsZp(sql);
+        }
+        int[] IDMsZp(string sql)
+        {
+            int[] ret = new int[0];
+            SqlConnection sq = new SqlConnection(sql);
+            SqlCommand cm = new SqlCommand(@"select ID from dbo.[Coach]", sq);
+            SqlDataReader dr = cm.ExecuteReader();
+            try
+            {
+                while (dr.Read())
+                {
+                    Array.Resize(ref ret, ret.Length + 1);
+                    ret[ret.Length - 1] = (int)dr[ret.Length - 1];
+                }
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            return ret;
+        }
+        public string FllPsn(string sql, int CID)
+        {
+            string ret = "";
+            SqlConnection sq = new SqlConnection(sql);
+            SqlCommand cm = new SqlCommand(@"Select Describtion from dbo.[Coach] where ID = @N", sq);
+            cm.Parameters.AddWithValue("@N", CID);
+            try
+            {
+                sq.Open();
+                ret = (string)cm.ExecuteScalar();
+                sq.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            return ret;
+        }
+        public string FIOZp(string sql, int CID)
+        {
+            string ret = "";
+            SqlConnection sq = new SqlConnection(sql);
+            SqlCommand cm = new SqlCommand(@"Select concat(Surname, ' ', Name, ' ', Patronym) from dbo.[Coach] where ID = @N", sq);
+            cm.Parameters.AddWithValue("@N", CID);
+            try
+            {
+                sq.Open();
+                ret = (string)cm.ExecuteScalar();
+                sq.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            return ret;
+        }
+        public object PhZp(string sql, int CID)
+        {
+            object ph = null;
+            SqlConnection sq = new SqlConnection(sql);
+            SqlCommand cm = new SqlCommand(@"select Photo from dbo.[Coach] where ID = @N", sq);
+            cm.Parameters.AddWithValue("@N", CID);
+            try
+            {
+                sq.Open();
+                ph = (string)cm.ExecuteScalar();
+                sq.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            return ph;
+        }
+    }
 }
