@@ -92,6 +92,7 @@ namespace WindowsFormsApp1
             this.guna2Button2.Size = new System.Drawing.Size(143, 45);
             this.guna2Button2.TabIndex = 8;
             this.guna2Button2.Text = "UserName";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Separator1
             // 
@@ -275,6 +276,7 @@ namespace WindowsFormsApp1
             this.Name = "menuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.menuForm_Load);
             this.panelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.ResumeLayout(false);

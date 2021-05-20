@@ -24,8 +24,10 @@ namespace WindowsFormsApp1.Forms
 
         private void enterButton_Click(object sender, EventArgs e)
         {
-            new menuForm().Show();
-            this.Hide();
+            menuForm ms = new menuForm();
+            LoadFormDotShowHere fs = ms.Show;
+            fs += this.Hide;
+            LGPlmrch lg = new LGPlmrch(emailTextBox.Text, passTextBox.Text, CnStrPlmrch.sql, fs);
         }
 
         private void registationLabel_Click(object sender, EventArgs e)
@@ -76,6 +78,11 @@ namespace WindowsFormsApp1.Forms
         private void registationLabel_MouseLeave(object sender, EventArgs e)
         {
             registationLabel.Font = new Font("Microsoft Sans Serif", 8, FontStyle.Regular);
+        }
+
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

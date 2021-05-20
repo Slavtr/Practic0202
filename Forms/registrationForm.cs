@@ -21,12 +21,29 @@ namespace WindowsFormsApp1.Forms
             texts.Add(emailTextBox.Text);
             texts.Add(passTextBox1.Text);
             texts.Add(passTextBox2.Text);
+            texts.Add(guna2TextBox2.Text);
+            texts.Add(guna2TextBox1.Text);
+            texts.Add(guna2TextBox3.Text);
         }
 
         private void enterButton_Click(object sender, EventArgs e)
         {
-            new menuForm().Show();
-            this.Hide();
+            try
+            {
+                if (passTextBox1.Text != passTextBox2.Text)
+                {
+                    throw new Exception("Пароль не совпадает");
+                }
+                RGPlmrch rg = new RGPlmrch(guna2TextBox3.Text, guna2TextBox2.Text, guna2TextBox1.Text, emailTextBox.Text, passTextBox1.Text, "a", 0, CnStrPlmrch.sql);
+            }
+            catch(Exception exc)
+            {
+                label1.Text = exc.Message;
+            }
+            menuForm au = new menuForm();
+            LoadFormDotShowHere fs = au.Show;
+            fs += this.Hide;
+            LGPlmrch lg = new LGPlmrch(emailTextBox.Text, passTextBox1.Text, CnStrPlmrch.sql, fs);
         }
 
         private void emailTextBox_Enter(object sender, EventArgs e)
@@ -88,5 +105,52 @@ namespace WindowsFormsApp1.Forms
             Application.Exit();
         }
 
+        private void guna2TextBox2_Enter(object sender, EventArgs e)
+        {
+            if (guna2TextBox2.Text == (string)texts[3])
+            {
+                guna2TextBox2.Clear();
+            }
+        }
+
+        private void guna2TextBox1_Leave(object sender, EventArgs e)
+        {
+            if (guna2TextBox1.Text.Length == 0)
+            {
+                guna2TextBox1.Text = (string)texts[4];
+            }
+        }
+
+        private void guna2TextBox3_Enter(object sender, EventArgs e)
+        {
+            if (guna2TextBox3.Text == (string)texts[5])
+            {
+                guna2TextBox3.Clear();
+            }
+        }
+
+        private void guna2TextBox3_Leave(object sender, EventArgs e)
+        {
+            if (guna2TextBox3.Text.Length == 0)
+            {
+                guna2TextBox3.Text = (string)texts[5];
+            }
+        }
+
+        private void guna2TextBox1_Enter(object sender, EventArgs e)
+        {
+            if (guna2TextBox1.Text == (string)texts[4])
+            {
+                guna2TextBox1.Clear();
+            }
+        }
+
+        private void guna2TextBox2_Leave(object sender, EventArgs e)
+        {
+            if (guna2TextBox2.Text.Length == 0)
+            {
+                guna2TextBox2.Text = (string)texts[3];
+            }
+        }
     }
 }

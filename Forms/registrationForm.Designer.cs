@@ -211,7 +211,7 @@ namespace WindowsFormsApp1.Forms
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(174, 53);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(265, 36);
+            this.label4.Size = new System.Drawing.Size(265, 35);
             this.label4.TabIndex = 24;
             this.label4.Text = "Регистрация";
             // 
@@ -223,9 +223,8 @@ namespace WindowsFormsApp1.Forms
             this.label1.ForeColor = System.Drawing.Color.SandyBrown;
             this.label1.Location = new System.Drawing.Point(246, 342);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 13);
+            this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 25;
-            this.label1.Text = "Пароль правильный?";
             // 
             // guna2TextBox1
             // 
@@ -255,6 +254,8 @@ namespace WindowsFormsApp1.Forms
             this.guna2TextBox1.Size = new System.Drawing.Size(241, 37);
             this.guna2TextBox1.TabIndex = 28;
             this.guna2TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.guna2TextBox1.Enter += new System.EventHandler(this.guna2TextBox1_Enter);
+            this.guna2TextBox1.Leave += new System.EventHandler(this.guna2TextBox1_Leave);
             // 
             // guna2TextBox2
             // 
@@ -284,6 +285,8 @@ namespace WindowsFormsApp1.Forms
             this.guna2TextBox2.Size = new System.Drawing.Size(241, 37);
             this.guna2TextBox2.TabIndex = 27;
             this.guna2TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.guna2TextBox2.Enter += new System.EventHandler(this.guna2TextBox2_Enter);
+            this.guna2TextBox2.Leave += new System.EventHandler(this.guna2TextBox2_Leave);
             // 
             // guna2TextBox3
             // 
@@ -313,6 +316,8 @@ namespace WindowsFormsApp1.Forms
             this.guna2TextBox3.Size = new System.Drawing.Size(241, 37);
             this.guna2TextBox3.TabIndex = 26;
             this.guna2TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.guna2TextBox3.Enter += new System.EventHandler(this.guna2TextBox3_Enter);
+            this.guna2TextBox3.Leave += new System.EventHandler(this.guna2TextBox3_Leave);
             // 
             // registrationForm
             // 

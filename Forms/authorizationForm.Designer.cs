@@ -159,7 +159,7 @@ namespace WindowsFormsApp1.Forms
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(28, 112);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(268, 36);
+            this.label4.Size = new System.Drawing.Size(268, 35);
             this.label4.TabIndex = 12;
             this.label4.Text = "Авторизация";
             // 
@@ -215,6 +215,7 @@ namespace WindowsFormsApp1.Forms
             this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
             this.guna2ControlBox1.Size = new System.Drawing.Size(30, 30);
             this.guna2ControlBox1.TabIndex = 14;
+            this.guna2ControlBox1.Click += new System.EventHandler(this.guna2ControlBox1_Click);
             // 
             // guna2BorderlessForm1
             // 

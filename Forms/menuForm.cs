@@ -85,5 +85,15 @@ namespace WindowsFormsApp1
             this.Hide();
             new authorizationForm().Show();
         }
+
+        private void menuForm_Load(object sender, EventArgs e)
+        {
+            guna2Button2.Text = UsID.UsNm(CnStrPlmrch.sql);
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
