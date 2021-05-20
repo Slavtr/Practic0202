@@ -42,12 +42,14 @@ namespace WindowsFormsApp1.Forms
             {
                 emailTextBox.Clear();
             }
+            emailTextBox.ForeColor = Color.DimGray;
         }
 
         private void emailTextBox_Leave(object sender, EventArgs e)
         {
             if (emailTextBox.Text.Length == 0)
             {
+                emailTextBox.ForeColor = Color.Silver;
                 emailTextBox.Text = (string)texts[0];
             }
         }
@@ -58,6 +60,7 @@ namespace WindowsFormsApp1.Forms
             {
                 passTextBox.Clear();
             }
+            passTextBox.ForeColor = Color.DimGray;
 
         }
 
@@ -65,6 +68,7 @@ namespace WindowsFormsApp1.Forms
         {
             if (passTextBox.Text.Length == 0)
             {
+                passTextBox.ForeColor = Color.Silver;
                 passTextBox.Text = (string)texts[1];
             }
 

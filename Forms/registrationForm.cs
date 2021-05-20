@@ -21,9 +21,9 @@ namespace WindowsFormsApp1.Forms
             texts.Add(emailTextBox.Text);
             texts.Add(passTextBox1.Text);
             texts.Add(passTextBox2.Text);
-            texts.Add(guna2TextBox2.Text);
-            texts.Add(guna2TextBox1.Text);
-            texts.Add(guna2TextBox3.Text);
+            texts.Add(nameTextBox.Text);
+            texts.Add(thirdNameTextBox.Text);
+            texts.Add(secondNameTextBox.Text);
         }
 
         private void enterButton_Click(object sender, EventArgs e)
@@ -34,7 +34,7 @@ namespace WindowsFormsApp1.Forms
                 {
                     throw new Exception("Пароль не совпадает");
                 }
-                RGPlmrch rg = new RGPlmrch(guna2TextBox3.Text, guna2TextBox2.Text, guna2TextBox1.Text, emailTextBox.Text, passTextBox1.Text, "a", 0, CnStrPlmrch.sql);
+                RGPlmrch rg = new RGPlmrch(secondNameTextBox.Text, nameTextBox.Text, thirdNameTextBox.Text, emailTextBox.Text, passTextBox1.Text, "a", 0, CnStrPlmrch.sql);
             }
             catch(Exception exc)
             {
@@ -52,16 +52,16 @@ namespace WindowsFormsApp1.Forms
             {
                 emailTextBox.Clear();
             }
-
+            emailTextBox.ForeColor = Color.DimGray;
         }
 
         private void emailTextBox_Leave(object sender, EventArgs e)
         {
             if (emailTextBox.Text.Length == 0)
             {
+                emailTextBox.ForeColor = Color.Silver;
                 emailTextBox.Text = (string)texts[0];
             }
-
         }
 
         private void passTextBox1_Enter(object sender, EventArgs e)
@@ -70,16 +70,16 @@ namespace WindowsFormsApp1.Forms
             {
                 passTextBox1.Clear();
             }
-
+            passTextBox1.ForeColor = Color.DimGray;
         }
 
         private void passTextBox1_Leave(object sender, EventArgs e)
         {
             if (passTextBox1.Text.Length == 0)
             {
+                passTextBox1.ForeColor = Color.Silver;
                 passTextBox1.Text = (string)texts[1];
             }
-
         }
 
         private void passTextBox2_Enter(object sender, EventArgs e)
@@ -88,16 +88,69 @@ namespace WindowsFormsApp1.Forms
             {
                 passTextBox2.Clear();
             }
-
+            passTextBox2.ForeColor = Color.DimGray;
         }
 
         private void passTextBox2_Leave(object sender, EventArgs e)
         {
             if (passTextBox2.Text.Length == 0)
             {
+                passTextBox2.ForeColor = Color.Silver;
                 passTextBox2.Text = (string)texts[2];
             }
+        }
 
+        private void nameTextBox_Enter(object sender, EventArgs e)
+        {
+            if (nameTextBox.Text == (string)texts[3])
+            {
+                nameTextBox.Clear();
+            }
+            nameTextBox.ForeColor = Color.DimGray;
+        }
+        private void nameTextBox_Leave(object sender, EventArgs e)
+        {
+            if (nameTextBox.Text.Length == 0)
+            {
+                nameTextBox.ForeColor = Color.Silver;
+                nameTextBox.Text = (string)texts[3];
+            }
+        }
+
+        private void secondNameTextBox_Enter(object sender, EventArgs e)
+        {
+            if (secondNameTextBox.Text == (string)texts[5])
+            {
+                secondNameTextBox.Clear();
+            }
+            secondNameTextBox.ForeColor = Color.DimGray;
+        }
+
+        private void secondNameTextBox_Leave(object sender, EventArgs e)
+        {
+            if (secondNameTextBox.Text.Length == 0)
+            {
+                secondNameTextBox.ForeColor = Color.Silver;
+                secondNameTextBox.Text = (string)texts[5];
+            }
+        }
+
+        private void thirdNameTextBox_Enter(object sender, EventArgs e)
+        {
+            if (thirdNameTextBox.Text == (string)texts[4])
+            {
+                thirdNameTextBox.Clear();
+            }
+            thirdNameTextBox.ForeColor = Color.DimGray;
+        }
+
+        private void thirdNameTextBox_Leave(object sender, EventArgs e)
+        {
+            if (thirdNameTextBox.Text.Length == 0)
+            {
+                thirdNameTextBox.ForeColor = Color.Silver;
+                thirdNameTextBox.Text = (string)texts[4];
+            }
         }
 
         private void guna2ControlBox1_Click(object sender, EventArgs e)
@@ -105,52 +158,5 @@ namespace WindowsFormsApp1.Forms
             Application.Exit();
         }
 
-        private void guna2TextBox2_Enter(object sender, EventArgs e)
-        {
-            if (guna2TextBox2.Text == (string)texts[3])
-            {
-                guna2TextBox2.Clear();
-            }
-        }
-
-        private void guna2TextBox1_Leave(object sender, EventArgs e)
-        {
-            if (guna2TextBox1.Text.Length == 0)
-            {
-                guna2TextBox1.Text = (string)texts[4];
-            }
-        }
-
-        private void guna2TextBox3_Enter(object sender, EventArgs e)
-        {
-            if (guna2TextBox3.Text == (string)texts[5])
-            {
-                guna2TextBox3.Clear();
-            }
-        }
-
-        private void guna2TextBox3_Leave(object sender, EventArgs e)
-        {
-            if (guna2TextBox3.Text.Length == 0)
-            {
-                guna2TextBox3.Text = (string)texts[5];
-            }
-        }
-
-        private void guna2TextBox1_Enter(object sender, EventArgs e)
-        {
-            if (guna2TextBox1.Text == (string)texts[4])
-            {
-                guna2TextBox1.Clear();
-            }
-        }
-
-        private void guna2TextBox2_Leave(object sender, EventArgs e)
-        {
-            if (guna2TextBox2.Text.Length == 0)
-            {
-                guna2TextBox2.Text = (string)texts[3];
-            }
-        }
     }
 }

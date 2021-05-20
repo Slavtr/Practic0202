@@ -92,6 +92,7 @@ namespace WindowsFormsApp1.Forms
             // passTextBox
             // 
             this.passTextBox.AutoRoundedCorners = true;
+            this.passTextBox.BackColor = System.Drawing.Color.Transparent;
             this.passTextBox.BorderRadius = 17;
             this.passTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.passTextBox.DefaultText = "Пароль";
@@ -103,7 +104,7 @@ namespace WindowsFormsApp1.Forms
             this.passTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.passTextBox.FocusedState.Parent = this.passTextBox;
             this.passTextBox.Font = new System.Drawing.Font("Furore", 12F, System.Drawing.FontStyle.Italic);
-            this.passTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.passTextBox.ForeColor = System.Drawing.Color.Silver;
             this.passTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.passTextBox.HoverState.Parent = this.passTextBox;
             this.passTextBox.Location = new System.Drawing.Point(39, 255);
@@ -123,6 +124,7 @@ namespace WindowsFormsApp1.Forms
             // emailTextBox
             // 
             this.emailTextBox.AutoRoundedCorners = true;
+            this.emailTextBox.BackColor = System.Drawing.Color.Transparent;
             this.emailTextBox.BorderRadius = 17;
             this.emailTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.emailTextBox.DefaultText = "Логин";
@@ -134,7 +136,7 @@ namespace WindowsFormsApp1.Forms
             this.emailTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.emailTextBox.FocusedState.Parent = this.emailTextBox;
             this.emailTextBox.Font = new System.Drawing.Font("Furore", 12F, System.Drawing.FontStyle.Italic);
-            this.emailTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.emailTextBox.ForeColor = System.Drawing.Color.Silver;
             this.emailTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.emailTextBox.HoverState.Parent = this.emailTextBox;
             this.emailTextBox.Location = new System.Drawing.Point(39, 200);
@@ -157,7 +159,7 @@ namespace WindowsFormsApp1.Forms
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Furore", 24F, System.Drawing.FontStyle.Italic);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(28, 112);
+            this.label4.Location = new System.Drawing.Point(22, 112);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(268, 35);
             this.label4.TabIndex = 12;
@@ -167,6 +169,7 @@ namespace WindowsFormsApp1.Forms
             // 
             this.registationLabel.AutoSize = true;
             this.registationLabel.BackColor = System.Drawing.Color.Transparent;
+            this.registationLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.registationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.registationLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.registationLabel.Location = new System.Drawing.Point(175, 436);
@@ -181,7 +184,7 @@ namespace WindowsFormsApp1.Forms
             // guna2PictureBox2
             // 
             this.guna2PictureBox2.Image = global::WindowsFormsApp1.Properties.Resources.logo;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(114, 31);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(110, 31);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.ShadowDecoration.Parent = this.guna2PictureBox2;
             this.guna2PictureBox2.Size = new System.Drawing.Size(95, 78);
