@@ -78,11 +78,11 @@
     <Compile Include="Forms\menuForm.Designer.cs">
       <DependentUpon>menuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Registration.cs">
+    <Compile Include="Forms\registrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Registration.Designer.cs">
-      <DependentUpon>Registration.cs</DependentUpon>
+    <Compile Include="Forms\registrationForm.Designer.cs">
+      <DependentUpon>registrationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\workoutForm.cs">
       <SubType>Form</SubType>
@@ -104,8 +104,8 @@
     <EmbeddedResource Include="Forms\menuForm.resx">
       <DependentUpon>menuForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Registration.resx">
-      <DependentUpon>Registration.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\registrationForm.resx">
+      <DependentUpon>registrationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\workoutForm.resx">
       <DependentUpon>workoutForm.cs</DependentUpon>
@@ -135,22 +135,24 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\sportbag.png" />
-    <None Include="Resources\logo.png" />
-    <None Include="Resources\logo text.png" />
-    <None Include="Resources\flex-biceps.png" />
-    <None Include="Resources\dumbbell.png" />
-    <None Include="Resources\calendar--v1.png" />
-    <None Include="Resources\logo.bmp" />
+    <None Include="Resources\icons\sportbag.png" />
+    <None Include="Resources\icons\logo.png" />
+    <None Include="Resources\icons\logo text.png" />
+    <None Include="Resources\icons\flex-biceps.png" />
+    <None Include="Resources\icons\dumbbell.png" />
+    <None Include="Resources\icons\calendar--v1.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\lock.png" />
+    <None Include="Resources\icons\lock.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mail.png" />
+    <None Include="Resources\icons\mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -14,7 +14,6 @@ namespace WindowsFormsApp1.Forms
     public partial class workoutForm : Form
     {
         ArrayList images = new ArrayList();
-        private int countOfWorkouts = 1;
         public workoutForm()
         {
             CreateBitmapList();

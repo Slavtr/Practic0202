@@ -60,13 +60,6 @@ namespace WindowsFormsApp1
             childForm.Show();   
         }
 
-        private void SetPositionOfTrackBar(Guna2TrackBar trackBar)
-        {
-            if (trackBar != null)
-            {
-            }
-        }
-
         private void workoutButton_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.workoutForm(), sender);
@@ -85,6 +78,12 @@ namespace WindowsFormsApp1
         private void guna2ControlBox1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new authorizationForm().Show();
         }
     }
 }

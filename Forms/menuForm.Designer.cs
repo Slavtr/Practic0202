@@ -35,7 +35,7 @@ namespace WindowsFormsApp1
             this.panelMenu = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.exitButton = new Guna.UI2.WinForms.Guna2Button();
             this.aboutusButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.calendarButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.workoutButton = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -59,7 +59,7 @@ namespace WindowsFormsApp1
             this.panelMenu.BackColor = System.Drawing.Color.DimGray;
             this.panelMenu.Controls.Add(this.guna2Button2);
             this.panelMenu.Controls.Add(this.guna2Separator1);
-            this.panelMenu.Controls.Add(this.guna2Button1);
+            this.panelMenu.Controls.Add(this.exitButton);
             this.panelMenu.Controls.Add(this.aboutusButton);
             this.panelMenu.Controls.Add(this.calendarButton);
             this.panelMenu.Controls.Add(this.workoutButton);
@@ -100,27 +100,28 @@ namespace WindowsFormsApp1
             this.guna2Separator1.Size = new System.Drawing.Size(242, 10);
             this.guna2Separator1.TabIndex = 7;
             // 
-            // guna2Button1
+            // exitButton
             // 
-            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2Button1.CheckedState.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Underline);
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.HoverState.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Underline);
-            this.guna2Button1.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(170, 592);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.PressedColor = System.Drawing.Color.Chocolate;
-            this.guna2Button1.PressedDepth = 0;
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(73, 45);
-            this.guna2Button1.TabIndex = 6;
-            this.guna2Button1.Text = "Выйти";
+            this.exitButton.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.exitButton.CheckedState.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Underline);
+            this.exitButton.CheckedState.Parent = this.exitButton;
+            this.exitButton.CustomImages.Parent = this.exitButton;
+            this.exitButton.FillColor = System.Drawing.Color.Transparent;
+            this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.exitButton.ForeColor = System.Drawing.Color.White;
+            this.exitButton.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.exitButton.HoverState.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Underline);
+            this.exitButton.HoverState.ForeColor = System.Drawing.Color.White;
+            this.exitButton.HoverState.Parent = this.exitButton;
+            this.exitButton.Location = new System.Drawing.Point(170, 592);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.PressedColor = System.Drawing.Color.Chocolate;
+            this.exitButton.PressedDepth = 0;
+            this.exitButton.ShadowDecoration.Parent = this.exitButton;
+            this.exitButton.Size = new System.Drawing.Size(73, 45);
+            this.exitButton.TabIndex = 6;
+            this.exitButton.Text = "Выйти";
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // aboutusButton
             // 
@@ -269,7 +270,10 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.panelMenu);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(1080, 640);
+            this.MinimumSize = new System.Drawing.Size(1080, 640);
             this.Name = "menuForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
@@ -287,7 +291,7 @@ namespace WindowsFormsApp1
         private Guna.UI2.WinForms.Guna2GradientButton aboutusButton;
         private Guna.UI2.WinForms.Guna2GradientButton calendarButton;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button exitButton;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private System.Windows.Forms.Panel desktopPannel;

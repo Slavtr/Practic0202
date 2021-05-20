@@ -11,16 +11,17 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1.Forms
 {
-    public partial class authorizationForm : Form
+    public partial class registrationForm : Form
     {
         ArrayList texts = new ArrayList();
-        public authorizationForm()
+
+        public registrationForm()
         {
             InitializeComponent();
             texts.Add(emailTextBox.Text);
-            texts.Add(passTextBox.Text);
+            texts.Add(passTextBox1.Text);
+            texts.Add(passTextBox2.Text);
         }
-
 
         private void enterButton_Click(object sender, EventArgs e)
         {
@@ -28,18 +29,13 @@ namespace WindowsFormsApp1.Forms
             this.Hide();
         }
 
-        private void registationLabel_Click(object sender, EventArgs e)
-        {
-            new registrationForm().Show();
-            this.Hide();
-        }
-
         private void emailTextBox_Enter(object sender, EventArgs e)
         {
-            if(emailTextBox.Text == (string)texts[0])
+            if (emailTextBox.Text == (string)texts[0])
             {
                 emailTextBox.Clear();
             }
+
         }
 
         private void emailTextBox_Leave(object sender, EventArgs e)
@@ -48,34 +44,48 @@ namespace WindowsFormsApp1.Forms
             {
                 emailTextBox.Text = (string)texts[0];
             }
+
         }
 
-        private void passTextBox_Enter(object sender, EventArgs e)
+        private void passTextBox1_Enter(object sender, EventArgs e)
         {
-            if (passTextBox.Text== (string)texts[1])
+            if (passTextBox1.Text == (string)texts[1])
             {
-                passTextBox.Clear();
+                passTextBox1.Clear();
             }
 
         }
 
-        private void passTextBox_Leave(object sender, EventArgs e)
+        private void passTextBox1_Leave(object sender, EventArgs e)
         {
-            if (passTextBox.Text.Length == 0)
+            if (passTextBox1.Text.Length == 0)
             {
-                passTextBox.Text = (string)texts[1];
+                passTextBox1.Text = (string)texts[1];
             }
 
         }
 
-        private void registationLabel_MouseEnter(object sender, EventArgs e)
+        private void passTextBox2_Enter(object sender, EventArgs e)
         {
-            registationLabel.Font = new Font("Microsoft Sans Serif", 8, FontStyle.Underline);
+            if (passTextBox2.Text == (string)texts[2])
+            {
+                passTextBox2.Clear();
+            }
+
         }
 
-        private void registationLabel_MouseLeave(object sender, EventArgs e)
+        private void passTextBox2_Leave(object sender, EventArgs e)
         {
-            registationLabel.Font = new Font("Microsoft Sans Serif", 8, FontStyle.Regular);
+            if (passTextBox2.Text.Length == 0)
+            {
+                passTextBox2.Text = (string)texts[2];
+            }
+
+        }
+
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

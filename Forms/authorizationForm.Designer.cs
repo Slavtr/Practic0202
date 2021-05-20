@@ -31,12 +31,12 @@ namespace WindowsFormsApp1.Forms
         {
             this.components = new System.ComponentModel.Container();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.workoutButton = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.enterButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label1 = new System.Windows.Forms.Label();
             this.passTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.emailTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.registationLabel = new System.Windows.Forms.Label();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -49,34 +49,33 @@ namespace WindowsFormsApp1.Forms
             this.guna2Elipse1.BorderRadius = 15;
             this.guna2Elipse1.TargetControl = this;
             // 
-            // workoutButton
+            // enterButton
             // 
-            this.workoutButton.Animated = true;
-            this.workoutButton.AutoRoundedCorners = true;
-            this.workoutButton.BackColor = System.Drawing.Color.Gray;
-            this.workoutButton.BorderColor = System.Drawing.Color.Silver;
-            this.workoutButton.BorderRadius = 21;
-            this.workoutButton.BorderThickness = 3;
-            this.workoutButton.CheckedState.Parent = this.workoutButton;
-            this.workoutButton.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.workoutButton.CustomImages.ImageSize = new System.Drawing.Size(35, 35);
-            this.workoutButton.CustomImages.Parent = this.workoutButton;
-            this.workoutButton.FillColor = System.Drawing.Color.Empty;
-            this.workoutButton.FillColor2 = System.Drawing.Color.Empty;
-            this.workoutButton.Font = new System.Drawing.Font("Furore", 10F, System.Drawing.FontStyle.Italic);
-            this.workoutButton.ForeColor = System.Drawing.Color.White;
-            this.workoutButton.HoverState.FillColor = System.Drawing.Color.Silver;
-            this.workoutButton.HoverState.FillColor2 = System.Drawing.Color.DimGray;
-            this.workoutButton.HoverState.Parent = this.workoutButton;
-            this.workoutButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.workoutButton.Location = new System.Drawing.Point(34, 346);
-            this.workoutButton.Name = "workoutButton";
-            this.workoutButton.PressedColor = System.Drawing.Color.DarkGray;
-            this.workoutButton.ShadowDecoration.Parent = this.workoutButton;
-            this.workoutButton.Size = new System.Drawing.Size(246, 45);
-            this.workoutButton.TabIndex = 3;
-            this.workoutButton.Text = "Войти";
-            this.workoutButton.Click += new System.EventHandler(this.workoutButton_Click);
+            this.enterButton.AutoRoundedCorners = true;
+            this.enterButton.BackColor = System.Drawing.Color.Transparent;
+            this.enterButton.BorderColor = System.Drawing.Color.Silver;
+            this.enterButton.BorderRadius = 21;
+            this.enterButton.BorderThickness = 3;
+            this.enterButton.CheckedState.Parent = this.enterButton;
+            this.enterButton.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.enterButton.CustomImages.ImageSize = new System.Drawing.Size(35, 35);
+            this.enterButton.CustomImages.Parent = this.enterButton;
+            this.enterButton.FillColor = System.Drawing.Color.Empty;
+            this.enterButton.FillColor2 = System.Drawing.Color.Empty;
+            this.enterButton.Font = new System.Drawing.Font("Furore", 10F, System.Drawing.FontStyle.Italic);
+            this.enterButton.ForeColor = System.Drawing.Color.White;
+            this.enterButton.HoverState.FillColor = System.Drawing.Color.Silver;
+            this.enterButton.HoverState.FillColor2 = System.Drawing.Color.DimGray;
+            this.enterButton.HoverState.Parent = this.enterButton;
+            this.enterButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.enterButton.Location = new System.Drawing.Point(34, 346);
+            this.enterButton.Name = "enterButton";
+            this.enterButton.PressedColor = System.Drawing.Color.DarkGray;
+            this.enterButton.ShadowDecoration.Parent = this.enterButton;
+            this.enterButton.Size = new System.Drawing.Size(246, 45);
+            this.enterButton.TabIndex = 3;
+            this.enterButton.Text = "Войти";
+            this.enterButton.Click += new System.EventHandler(this.enterButton_Click);
             // 
             // label1
             // 
@@ -118,6 +117,8 @@ namespace WindowsFormsApp1.Forms
             this.passTextBox.Size = new System.Drawing.Size(241, 37);
             this.passTextBox.TabIndex = 8;
             this.passTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.passTextBox.Enter += new System.EventHandler(this.passTextBox_Enter);
+            this.passTextBox.Leave += new System.EventHandler(this.passTextBox_Leave);
             // 
             // emailTextBox
             // 
@@ -147,6 +148,8 @@ namespace WindowsFormsApp1.Forms
             this.emailTextBox.Size = new System.Drawing.Size(241, 37);
             this.emailTextBox.TabIndex = 10;
             this.emailTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.emailTextBox.Enter += new System.EventHandler(this.emailTextBox_Enter);
+            this.emailTextBox.Leave += new System.EventHandler(this.emailTextBox_Leave);
             // 
             // label4
             // 
@@ -154,31 +157,34 @@ namespace WindowsFormsApp1.Forms
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Furore", 24F, System.Drawing.FontStyle.Italic);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(28, 121);
+            this.label4.Location = new System.Drawing.Point(28, 112);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(268, 36);
             this.label4.TabIndex = 12;
             this.label4.Text = "Авторизация";
             // 
-            // label2
+            // registationLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label2.Location = new System.Drawing.Point(175, 436);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 13);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "зарегистрируйтесь";
+            this.registationLabel.AutoSize = true;
+            this.registationLabel.BackColor = System.Drawing.Color.Transparent;
+            this.registationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.registationLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.registationLabel.Location = new System.Drawing.Point(175, 436);
+            this.registationLabel.Name = "registationLabel";
+            this.registationLabel.Size = new System.Drawing.Size(105, 13);
+            this.registationLabel.TabIndex = 13;
+            this.registationLabel.Text = "зарегистрируйтесь";
+            this.registationLabel.Click += new System.EventHandler(this.registationLabel_Click);
+            this.registationLabel.MouseEnter += new System.EventHandler(this.registationLabel_MouseEnter);
+            this.registationLabel.MouseLeave += new System.EventHandler(this.registationLabel_MouseLeave);
             // 
             // guna2PictureBox2
             // 
             this.guna2PictureBox2.Image = global::WindowsFormsApp1.Properties.Resources.logo;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(110, 12);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(114, 31);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.ShadowDecoration.Parent = this.guna2PictureBox2;
-            this.guna2PictureBox2.Size = new System.Drawing.Size(110, 106);
+            this.guna2PictureBox2.Size = new System.Drawing.Size(95, 78);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox2.TabIndex = 2;
             this.guna2PictureBox2.TabStop = false;
@@ -219,19 +225,22 @@ namespace WindowsFormsApp1.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DimGray;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(320, 480);
             this.Controls.Add(this.guna2ControlBox2);
             this.Controls.Add(this.guna2ControlBox1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.registationLabel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.passTextBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.workoutButton);
+            this.Controls.Add(this.enterButton);
             this.Controls.Add(this.guna2PictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(320, 480);
+            this.MinimumSize = new System.Drawing.Size(320, 480);
             this.Name = "authorizationForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "authorizationForm";
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -244,10 +253,10 @@ namespace WindowsFormsApp1.Forms
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2GradientButton workoutButton;
+        private Guna.UI2.WinForms.Guna2GradientButton enterButton;
         private Guna.UI2.WinForms.Guna2TextBox passTextBox;
         private Guna.UI2.WinForms.Guna2TextBox emailTextBox;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label registationLabel;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
