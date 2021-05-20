@@ -31,7 +31,6 @@ namespace WindowsFormsApp1.Forms
         {
             this.components = new System.ComponentModel.Container();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.emailTextBox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -43,16 +42,14 @@ namespace WindowsFormsApp1.Forms
             this.thirdNameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.nameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.secondNameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.GradientPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.GradientPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
             // 
             this.guna2BorderlessForm1.ContainerControl = this;
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.BorderRadius = 15;
-            this.guna2Elipse1.TargetControl = this;
             // 
             // guna2ControlBox2
             // 
@@ -85,6 +82,7 @@ namespace WindowsFormsApp1.Forms
             // emailTextBox
             // 
             this.emailTextBox.AutoRoundedCorners = true;
+            this.emailTextBox.BackColor = System.Drawing.Color.Transparent;
             this.emailTextBox.BorderRadius = 17;
             this.emailTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.emailTextBox.DefaultText = "Логин";
@@ -99,7 +97,7 @@ namespace WindowsFormsApp1.Forms
             this.emailTextBox.ForeColor = System.Drawing.Color.Silver;
             this.emailTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.emailTextBox.HoverState.Parent = this.emailTextBox;
-            this.emailTextBox.Location = new System.Drawing.Point(349, 156);
+            this.emailTextBox.Location = new System.Drawing.Point(349, 37);
             this.emailTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.PasswordChar = '\0';
@@ -116,6 +114,7 @@ namespace WindowsFormsApp1.Forms
             // passTextBox1
             // 
             this.passTextBox1.AutoRoundedCorners = true;
+            this.passTextBox1.BackColor = System.Drawing.Color.Transparent;
             this.passTextBox1.BorderRadius = 17;
             this.passTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.passTextBox1.DefaultText = "Пароль";
@@ -130,7 +129,7 @@ namespace WindowsFormsApp1.Forms
             this.passTextBox1.ForeColor = System.Drawing.Color.Silver;
             this.passTextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.passTextBox1.HoverState.Parent = this.passTextBox1;
-            this.passTextBox1.Location = new System.Drawing.Point(349, 214);
+            this.passTextBox1.Location = new System.Drawing.Point(349, 95);
             this.passTextBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.passTextBox1.Name = "passTextBox1";
             this.passTextBox1.PasswordChar = '\0';
@@ -150,22 +149,21 @@ namespace WindowsFormsApp1.Forms
             this.enterButton.BackColor = System.Drawing.Color.Transparent;
             this.enterButton.BorderColor = System.Drawing.Color.Silver;
             this.enterButton.BorderRadius = 21;
-            this.enterButton.BorderThickness = 3;
             this.enterButton.CheckedState.Parent = this.enterButton;
             this.enterButton.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.enterButton.CustomImages.ImageSize = new System.Drawing.Size(35, 35);
             this.enterButton.CustomImages.Parent = this.enterButton;
-            this.enterButton.FillColor = System.Drawing.Color.Empty;
-            this.enterButton.FillColor2 = System.Drawing.Color.Empty;
+            this.enterButton.FillColor = System.Drawing.Color.DarkGray;
+            this.enterButton.FillColor2 = System.Drawing.Color.LightGray;
             this.enterButton.Font = new System.Drawing.Font("Furore", 10F, System.Drawing.FontStyle.Italic);
             this.enterButton.ForeColor = System.Drawing.Color.White;
-            this.enterButton.HoverState.FillColor = System.Drawing.Color.Silver;
-            this.enterButton.HoverState.FillColor2 = System.Drawing.Color.DimGray;
+            this.enterButton.HoverState.FillColor = System.Drawing.SystemColors.ControlDark;
+            this.enterButton.HoverState.FillColor2 = System.Drawing.SystemColors.ControlDark;
             this.enterButton.HoverState.Parent = this.enterButton;
             this.enterButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.enterButton.Location = new System.Drawing.Point(180, 389);
             this.enterButton.Name = "enterButton";
-            this.enterButton.PressedColor = System.Drawing.Color.DarkGray;
+            this.enterButton.PressedColor = System.Drawing.Color.DimGray;
             this.enterButton.ShadowDecoration.Parent = this.enterButton;
             this.enterButton.Size = new System.Drawing.Size(246, 45);
             this.enterButton.TabIndex = 19;
@@ -175,6 +173,7 @@ namespace WindowsFormsApp1.Forms
             // passTextBox2
             // 
             this.passTextBox2.AutoRoundedCorners = true;
+            this.passTextBox2.BackColor = System.Drawing.Color.Transparent;
             this.passTextBox2.BorderRadius = 17;
             this.passTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.passTextBox2.DefaultText = "Повторите пароль";
@@ -189,7 +188,7 @@ namespace WindowsFormsApp1.Forms
             this.passTextBox2.ForeColor = System.Drawing.Color.Silver;
             this.passTextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.passTextBox2.HoverState.Parent = this.passTextBox2;
-            this.passTextBox2.Location = new System.Drawing.Point(349, 270);
+            this.passTextBox2.Location = new System.Drawing.Point(349, 151);
             this.passTextBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.passTextBox2.Name = "passTextBox2";
             this.passTextBox2.PasswordChar = '\0';
@@ -229,6 +228,7 @@ namespace WindowsFormsApp1.Forms
             // thirdNameTextBox
             // 
             this.thirdNameTextBox.AutoRoundedCorners = true;
+            this.thirdNameTextBox.BackColor = System.Drawing.Color.Transparent;
             this.thirdNameTextBox.BorderRadius = 17;
             this.thirdNameTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.thirdNameTextBox.DefaultText = "Отчество";
@@ -243,7 +243,7 @@ namespace WindowsFormsApp1.Forms
             this.thirdNameTextBox.ForeColor = System.Drawing.Color.Silver;
             this.thirdNameTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.thirdNameTextBox.HoverState.Parent = this.thirdNameTextBox;
-            this.thirdNameTextBox.Location = new System.Drawing.Point(47, 270);
+            this.thirdNameTextBox.Location = new System.Drawing.Point(47, 151);
             this.thirdNameTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.thirdNameTextBox.Name = "thirdNameTextBox";
             this.thirdNameTextBox.PasswordChar = '\0';
@@ -260,6 +260,7 @@ namespace WindowsFormsApp1.Forms
             // nameTextBox
             // 
             this.nameTextBox.AutoRoundedCorners = true;
+            this.nameTextBox.BackColor = System.Drawing.Color.Transparent;
             this.nameTextBox.BorderRadius = 17;
             this.nameTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.nameTextBox.DefaultText = "Имя";
@@ -274,7 +275,7 @@ namespace WindowsFormsApp1.Forms
             this.nameTextBox.ForeColor = System.Drawing.Color.Silver;
             this.nameTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.nameTextBox.HoverState.Parent = this.nameTextBox;
-            this.nameTextBox.Location = new System.Drawing.Point(47, 156);
+            this.nameTextBox.Location = new System.Drawing.Point(47, 37);
             this.nameTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.PasswordChar = '\0';
@@ -291,6 +292,7 @@ namespace WindowsFormsApp1.Forms
             // secondNameTextBox
             // 
             this.secondNameTextBox.AutoRoundedCorners = true;
+            this.secondNameTextBox.BackColor = System.Drawing.Color.Transparent;
             this.secondNameTextBox.BorderRadius = 17;
             this.secondNameTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.secondNameTextBox.DefaultText = "Фамилия";
@@ -305,7 +307,7 @@ namespace WindowsFormsApp1.Forms
             this.secondNameTextBox.ForeColor = System.Drawing.Color.Silver;
             this.secondNameTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.secondNameTextBox.HoverState.Parent = this.secondNameTextBox;
-            this.secondNameTextBox.Location = new System.Drawing.Point(47, 214);
+            this.secondNameTextBox.Location = new System.Drawing.Point(47, 95);
             this.secondNameTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.secondNameTextBox.Name = "secondNameTextBox";
             this.secondNameTextBox.PasswordChar = '\0';
@@ -319,29 +321,45 @@ namespace WindowsFormsApp1.Forms
             this.secondNameTextBox.Enter += new System.EventHandler(this.secondNameTextBox_Enter);
             this.secondNameTextBox.Leave += new System.EventHandler(this.secondNameTextBox_Leave);
             // 
+            // GradientPanel
+            // 
+            this.GradientPanel.Controls.Add(this.nameTextBox);
+            this.GradientPanel.Controls.Add(this.secondNameTextBox);
+            this.GradientPanel.Controls.Add(this.thirdNameTextBox);
+            this.GradientPanel.Controls.Add(this.passTextBox2);
+            this.GradientPanel.Controls.Add(this.passTextBox1);
+            this.GradientPanel.Controls.Add(this.emailTextBox);
+            this.GradientPanel.FillColor = System.Drawing.Color.DarkGray;
+            this.GradientPanel.Location = new System.Drawing.Point(0, 119);
+            this.GradientPanel.Name = "GradientPanel";
+            this.GradientPanel.ShadowDecoration.Parent = this.GradientPanel;
+            this.GradientPanel.Size = new System.Drawing.Size(642, 220);
+            this.GradientPanel.TabIndex = 29;
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 15;
+            this.guna2Elipse1.TargetControl = this;
+            // 
             // registrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(640, 480);
-            this.Controls.Add(this.thirdNameTextBox);
-            this.Controls.Add(this.nameTextBox);
-            this.Controls.Add(this.secondNameTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.passTextBox2);
-            this.Controls.Add(this.emailTextBox);
-            this.Controls.Add(this.passTextBox1);
             this.Controls.Add(this.enterButton);
             this.Controls.Add(this.guna2ControlBox2);
             this.Controls.Add(this.guna2ControlBox1);
+            this.Controls.Add(this.GradientPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(640, 480);
             this.MinimumSize = new System.Drawing.Size(640, 480);
             this.Name = "registrationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration";
+            this.GradientPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,7 +368,6 @@ namespace WindowsFormsApp1.Forms
         #endregion
 
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2TextBox emailTextBox;
@@ -362,5 +379,7 @@ namespace WindowsFormsApp1.Forms
         private Guna.UI2.WinForms.Guna2TextBox thirdNameTextBox;
         private Guna.UI2.WinForms.Guna2TextBox nameTextBox;
         private Guna.UI2.WinForms.Guna2TextBox secondNameTextBox;
+        private Guna.UI2.WinForms.Guna2GradientPanel GradientPanel;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }

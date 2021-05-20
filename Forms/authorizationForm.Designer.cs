@@ -32,16 +32,17 @@ namespace WindowsFormsApp1.Forms
             this.components = new System.ComponentModel.Container();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.enterButton = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.passTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.emailTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.registationLabel = new System.Windows.Forms.Label();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2GradientPanel1.SuspendLayout();
+            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -55,39 +56,26 @@ namespace WindowsFormsApp1.Forms
             this.enterButton.BackColor = System.Drawing.Color.Transparent;
             this.enterButton.BorderColor = System.Drawing.Color.Silver;
             this.enterButton.BorderRadius = 21;
-            this.enterButton.BorderThickness = 3;
             this.enterButton.CheckedState.Parent = this.enterButton;
             this.enterButton.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.enterButton.CustomImages.ImageSize = new System.Drawing.Size(35, 35);
             this.enterButton.CustomImages.Parent = this.enterButton;
-            this.enterButton.FillColor = System.Drawing.Color.Empty;
-            this.enterButton.FillColor2 = System.Drawing.Color.Empty;
+            this.enterButton.FillColor = System.Drawing.Color.DarkGray;
+            this.enterButton.FillColor2 = System.Drawing.Color.LightGray;
             this.enterButton.Font = new System.Drawing.Font("Furore", 10F, System.Drawing.FontStyle.Italic);
             this.enterButton.ForeColor = System.Drawing.Color.White;
-            this.enterButton.HoverState.FillColor = System.Drawing.Color.Silver;
-            this.enterButton.HoverState.FillColor2 = System.Drawing.Color.DimGray;
+            this.enterButton.HoverState.FillColor = System.Drawing.SystemColors.ControlDark;
+            this.enterButton.HoverState.FillColor2 = System.Drawing.SystemColors.ControlDark;
             this.enterButton.HoverState.Parent = this.enterButton;
             this.enterButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.enterButton.Location = new System.Drawing.Point(34, 346);
             this.enterButton.Name = "enterButton";
-            this.enterButton.PressedColor = System.Drawing.Color.DarkGray;
+            this.enterButton.PressedColor = System.Drawing.Color.DimGray;
             this.enterButton.ShadowDecoration.Parent = this.enterButton;
             this.enterButton.Size = new System.Drawing.Size(246, 45);
             this.enterButton.TabIndex = 3;
             this.enterButton.Text = "Войти";
             this.enterButton.Click += new System.EventHandler(this.enterButton_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(36, 436);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Вы здесь впервые? Тогда";
             // 
             // passTextBox
             // 
@@ -107,7 +95,7 @@ namespace WindowsFormsApp1.Forms
             this.passTextBox.ForeColor = System.Drawing.Color.Silver;
             this.passTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.passTextBox.HoverState.Parent = this.passTextBox;
-            this.passTextBox.Location = new System.Drawing.Point(39, 255);
+            this.passTextBox.Location = new System.Drawing.Point(39, 91);
             this.passTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.passTextBox.Name = "passTextBox";
             this.passTextBox.PasswordChar = '\0';
@@ -139,7 +127,7 @@ namespace WindowsFormsApp1.Forms
             this.emailTextBox.ForeColor = System.Drawing.Color.Silver;
             this.emailTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.emailTextBox.HoverState.Parent = this.emailTextBox;
-            this.emailTextBox.Location = new System.Drawing.Point(39, 200);
+            this.emailTextBox.Location = new System.Drawing.Point(39, 33);
             this.emailTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.PasswordChar = '\0';
@@ -159,7 +147,7 @@ namespace WindowsFormsApp1.Forms
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Furore", 24F, System.Drawing.FontStyle.Italic);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(22, 112);
+            this.label4.Location = new System.Drawing.Point(25, 65);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(268, 35);
             this.label4.TabIndex = 12;
@@ -171,26 +159,32 @@ namespace WindowsFormsApp1.Forms
             this.registationLabel.BackColor = System.Drawing.Color.Transparent;
             this.registationLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.registationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.registationLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.registationLabel.Location = new System.Drawing.Point(175, 436);
+            this.registationLabel.ForeColor = System.Drawing.Color.White;
+            this.registationLabel.Location = new System.Drawing.Point(94, 413);
             this.registationLabel.Name = "registationLabel";
-            this.registationLabel.Size = new System.Drawing.Size(105, 13);
+            this.registationLabel.Size = new System.Drawing.Size(127, 13);
             this.registationLabel.TabIndex = 13;
-            this.registationLabel.Text = "зарегистрируйтесь";
+            this.registationLabel.Text = "Создать новый аккаунт";
             this.registationLabel.Click += new System.EventHandler(this.registationLabel_Click);
             this.registationLabel.MouseEnter += new System.EventHandler(this.registationLabel_MouseEnter);
             this.registationLabel.MouseLeave += new System.EventHandler(this.registationLabel_MouseLeave);
             // 
-            // guna2PictureBox2
+            // guna2BorderlessForm1
             // 
-            this.guna2PictureBox2.Image = global::WindowsFormsApp1.Properties.Resources.logo;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(110, 31);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.ShadowDecoration.Parent = this.guna2PictureBox2;
-            this.guna2PictureBox2.Size = new System.Drawing.Size(95, 78);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 2;
-            this.guna2PictureBox2.TabStop = false;
+            this.guna2BorderlessForm1.BorderRadius = 15;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            // 
+            // guna2GradientPanel1
+            // 
+            this.guna2GradientPanel1.Controls.Add(this.emailTextBox);
+            this.guna2GradientPanel1.Controls.Add(this.passTextBox);
+            this.guna2GradientPanel1.FillColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 142);
+            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
+            this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(320, 156);
+            this.guna2GradientPanel1.TabIndex = 16;
             // 
             // guna2ControlBox2
             // 
@@ -220,10 +214,16 @@ namespace WindowsFormsApp1.Forms
             this.guna2ControlBox1.TabIndex = 14;
             this.guna2ControlBox1.Click += new System.EventHandler(this.guna2ControlBox1_Click);
             // 
-            // guna2BorderlessForm1
+            // guna2Panel1
             // 
-            this.guna2BorderlessForm1.BorderRadius = 15;
-            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2Panel1.Controls.Add(this.guna2ControlBox2);
+            this.guna2Panel1.Controls.Add(this.guna2ControlBox1);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
+            this.guna2Panel1.Size = new System.Drawing.Size(320, 40);
+            this.guna2Panel1.TabIndex = 17;
             // 
             // authorizationForm
             // 
@@ -231,22 +231,19 @@ namespace WindowsFormsApp1.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(320, 480);
-            this.Controls.Add(this.guna2ControlBox2);
-            this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.registationLabel);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.emailTextBox);
-            this.Controls.Add(this.passTextBox);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.enterButton);
-            this.Controls.Add(this.guna2PictureBox2);
+            this.Controls.Add(this.guna2GradientPanel1);
+            this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(320, 480);
             this.MinimumSize = new System.Drawing.Size(320, 480);
             this.Name = "authorizationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "authorizationForm";
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            this.guna2GradientPanel1.ResumeLayout(false);
+            this.guna2Panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,15 +252,15 @@ namespace WindowsFormsApp1.Forms
         #endregion
 
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
-        private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2GradientButton enterButton;
         private Guna.UI2.WinForms.Guna2TextBox passTextBox;
         private Guna.UI2.WinForms.Guna2TextBox emailTextBox;
         private System.Windows.Forms.Label registationLabel;
         private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
-        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
     }
 }

@@ -155,5 +155,23 @@
   <ItemGroup>
     <None Include="Resources\icons\user.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pictures\metal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pictures\Царапины.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pictures\sharpMetal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pictures\metall.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pictures\double-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pictures\double-left.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

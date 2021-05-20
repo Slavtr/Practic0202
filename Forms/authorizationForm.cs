@@ -42,6 +42,7 @@ namespace WindowsFormsApp1.Forms
             {
                 emailTextBox.Clear();
             }
+            emailTextBox.Font = new Font("Microsoft JhengHei", 12);
             emailTextBox.ForeColor = Color.DimGray;
         }
 
@@ -49,6 +50,7 @@ namespace WindowsFormsApp1.Forms
         {
             if (emailTextBox.Text.Length == 0)
             {
+                emailTextBox.Font = new Font("Furore", 12, FontStyle.Italic);
                 emailTextBox.ForeColor = Color.Silver;
                 emailTextBox.Text = (string)texts[0];
             }
@@ -56,10 +58,12 @@ namespace WindowsFormsApp1.Forms
 
         private void passTextBox_Enter(object sender, EventArgs e)
         {
-            if (passTextBox.Text== (string)texts[1])
+            if (passTextBox.Text == (string)texts[1])
             {
                 passTextBox.Clear();
             }
+            passTextBox.UseSystemPasswordChar = true;
+            passTextBox.Font = new Font("Microsoft JhengHei", 8);
             passTextBox.ForeColor = Color.DimGray;
 
         }
@@ -68,6 +72,8 @@ namespace WindowsFormsApp1.Forms
         {
             if (passTextBox.Text.Length == 0)
             {
+                passTextBox.UseSystemPasswordChar = false;
+                passTextBox.Font = new Font("Furore", 12, FontStyle.Italic);
                 passTextBox.ForeColor = Color.Silver;
                 passTextBox.Text = (string)texts[1];
             }
@@ -88,5 +94,6 @@ namespace WindowsFormsApp1.Forms
         {
             Application.Exit();
         }
+
     }
 }

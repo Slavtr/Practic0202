@@ -52,6 +52,7 @@ namespace WindowsFormsApp1.Forms
             {
                 emailTextBox.Clear();
             }
+            emailTextBox.Font = new Font("Microsoft JhengHei", 12);
             emailTextBox.ForeColor = Color.DimGray;
         }
 
@@ -59,6 +60,7 @@ namespace WindowsFormsApp1.Forms
         {
             if (emailTextBox.Text.Length == 0)
             {
+                emailTextBox.Font = new Font("Furore", 12, FontStyle.Italic);
                 emailTextBox.ForeColor = Color.Silver;
                 emailTextBox.Text = (string)texts[0];
             }
@@ -70,6 +72,8 @@ namespace WindowsFormsApp1.Forms
             {
                 passTextBox1.Clear();
             }
+            passTextBox1.UseSystemPasswordChar = true;
+            passTextBox1.Font = new Font("Microsoft JhengHei", 8);
             passTextBox1.ForeColor = Color.DimGray;
         }
 
@@ -77,6 +81,8 @@ namespace WindowsFormsApp1.Forms
         {
             if (passTextBox1.Text.Length == 0)
             {
+                passTextBox1.UseSystemPasswordChar = false;
+                passTextBox1.Font = new Font("Furore", 12, FontStyle.Italic);
                 passTextBox1.ForeColor = Color.Silver;
                 passTextBox1.Text = (string)texts[1];
             }
@@ -88,6 +94,8 @@ namespace WindowsFormsApp1.Forms
             {
                 passTextBox2.Clear();
             }
+            passTextBox2.UseSystemPasswordChar = true;
+            passTextBox2.Font = new Font("Microsoft JhengHei", 8);
             passTextBox2.ForeColor = Color.DimGray;
         }
 
@@ -95,6 +103,8 @@ namespace WindowsFormsApp1.Forms
         {
             if (passTextBox2.Text.Length == 0)
             {
+                passTextBox2.UseSystemPasswordChar = false;
+                passTextBox2.Font = new Font("Furore", 12, FontStyle.Italic);
                 passTextBox2.ForeColor = Color.Silver;
                 passTextBox2.Text = (string)texts[2];
             }
@@ -106,12 +116,14 @@ namespace WindowsFormsApp1.Forms
             {
                 nameTextBox.Clear();
             }
+            nameTextBox.Font = new Font("Microsoft JhengHei", 12);
             nameTextBox.ForeColor = Color.DimGray;
         }
         private void nameTextBox_Leave(object sender, EventArgs e)
         {
             if (nameTextBox.Text.Length == 0)
             {
+                nameTextBox.Font = new Font("Furore", 12, FontStyle.Italic);
                 nameTextBox.ForeColor = Color.Silver;
                 nameTextBox.Text = (string)texts[3];
             }
@@ -123,6 +135,7 @@ namespace WindowsFormsApp1.Forms
             {
                 secondNameTextBox.Clear();
             }
+            secondNameTextBox.Font = new Font("Microsoft JhengHei", 12);
             secondNameTextBox.ForeColor = Color.DimGray;
         }
 
@@ -130,6 +143,7 @@ namespace WindowsFormsApp1.Forms
         {
             if (secondNameTextBox.Text.Length == 0)
             {
+                secondNameTextBox.Font = new Font("Furore", 12, FontStyle.Italic);
                 secondNameTextBox.ForeColor = Color.Silver;
                 secondNameTextBox.Text = (string)texts[5];
             }
@@ -141,6 +155,7 @@ namespace WindowsFormsApp1.Forms
             {
                 thirdNameTextBox.Clear();
             }
+            thirdNameTextBox.Font = new Font("Microsoft JhengHei", 12);
             thirdNameTextBox.ForeColor = Color.DimGray;
         }
 
@@ -148,6 +163,7 @@ namespace WindowsFormsApp1.Forms
         {
             if (thirdNameTextBox.Text.Length == 0)
             {
+                thirdNameTextBox.Font = new Font("Furore", 12, FontStyle.Italic);
                 thirdNameTextBox.ForeColor = Color.Silver;
                 thirdNameTextBox.Text = (string)texts[4];
             }
