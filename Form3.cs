@@ -12,6 +12,8 @@ namespace Практика_0202
 {
     public partial class Form3 : Form
     {
+        CchZp cz = new CchZp(CnStrPlmrch.sql);
+        int Cnb = 0;
         public Form3()
         {
             InitializeComponent();
@@ -78,7 +80,17 @@ namespace Практика_0202
             groupBox3.Visible = true;
             groupBox4.Visible = false;
 
-            CchZp cz = new CchZp(CnStrPlmrch.sql);
+            if (Cnb >= cz.IDMs.Length) this.Cnb = 0;
+            if (Cnb < 0) this.Cnb = 0;
+            try
+            {
+                pictureBox1.Image = Image.FromStream(cz.PhZp(CnStrPlmrch.sql, Cnb));
+            }
+            catch
+            { }
+            label5.Text = cz.FIOZp(CnStrPlmrch.sql, Cnb);
+            richTextBox2.Text = cz.FllPsn(CnStrPlmrch.sql, Cnb);
+            label4.Text = "Цена: " + cz.CZp(CnStrPlmrch.sql, Cnb).ToString();
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -139,6 +151,38 @@ namespace Практика_0202
             ZpsNTrn zp = new ZpsNTrn();
             zp.Zps(date, time, CnStrPlmrch.sql, UsID.ID);
             button2_Click(sender, e);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Cnb++;
+            if (Cnb >= cz.IDMs.Length) Cnb = 0;
+            if (Cnb < 0) this.Cnb = 0;
+            try
+            {
+                pictureBox1.Image = Image.FromStream(cz.PhZp(CnStrPlmrch.sql, Cnb));
+            }
+            catch
+            { }
+            label5.Text = cz.FIOZp(CnStrPlmrch.sql, Cnb);
+            richTextBox2.Text = cz.FllPsn(CnStrPlmrch.sql, Cnb);
+            label4.Text = "Цена: " + cz.CZp(CnStrPlmrch.sql, Cnb).ToString();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Cnb--;
+            if (Cnb >= cz.IDMs.Length) Cnb = 0;
+            if (Cnb < 0) this.Cnb = 0;
+            try
+            {
+                pictureBox1.Image = Image.FromStream(cz.PhZp(CnStrPlmrch.sql, Cnb));
+            }
+            catch
+            { }
+            label5.Text = cz.FIOZp(CnStrPlmrch.sql, Cnb);
+            richTextBox2.Text = cz.FllPsn(CnStrPlmrch.sql, Cnb);
+            label4.Text = "Цена: " + cz.CZp(CnStrPlmrch.sql, Cnb).ToString();
         }
     }
 }

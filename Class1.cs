@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -300,14 +301,16 @@ namespace Практика_0202
             int[] ret = new int[0];
             SqlConnection sq = new SqlConnection(sql);
             SqlCommand cm = new SqlCommand(@"select ID from dbo.[Coach]", sq);
-            SqlDataReader dr = cm.ExecuteReader();
             try
             {
+                sq.Open();
+                SqlDataReader dr = cm.ExecuteReader();
                 while (dr.Read())
                 {
                     Array.Resize(ref ret, ret.Length + 1);
                     ret[ret.Length - 1] = (int)dr[ret.Length - 1];
                 }
+                sq.Close();
             }
             catch(Exception e)
             {
@@ -351,23 +354,43 @@ namespace Практика_0202
             }
             return ret;
         }
-        public object PhZp(string sql, int CID)
+        public MemoryStream PhZp(string sql, int CID)
         {
-            object ph = null;
+            MemoryStream st = new MemoryStream();
             SqlConnection sq = new SqlConnection(sql);
             SqlCommand cm = new SqlCommand(@"select Photo from dbo.[Coach] where ID = @N", sq);
+            cm.Parameters.AddWithValue("@N", CID);
+            SqlDataAdapter da = new SqlDataAdapter(cm);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "Images");
+            int count = ds.Tables["Images"].Rows.Count;
+            if(count>0)
+            {
+                if (ds.Tables["Images"].Rows[count - 1]["Photo"] != System.DBNull.Value)
+                {
+                    byte[] dt = (Byte[])ds.Tables["Images"].Rows[count - 1]["Photo"];
+                    st = new MemoryStream(dt);
+                }
+            }
+            return st;
+        }
+        public double CZp(string sql, int CID)
+        {
+            double ret = 0;
+            SqlConnection sq = new SqlConnection(sql);
+            SqlCommand cm = new SqlCommand(@"Select Cost from dbo.[Coach] where ID = @N", sq);
             cm.Parameters.AddWithValue("@N", CID);
             try
             {
                 sq.Open();
-                ph = (string)cm.ExecuteScalar();
+                ret = (double)cm.ExecuteScalar();
                 sq.Close();
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
-            return ph;
+            return ret;
         }
     }
 }

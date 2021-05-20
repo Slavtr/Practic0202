@@ -51,12 +51,12 @@ namespace Практика_0202
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LogotypePlace)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -281,6 +281,26 @@ namespace Практика_0202
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Тренер";
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(45, 401);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(32, 23);
+            this.button5.TabIndex = 6;
+            this.button5.Text = ">";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(7, 401);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(32, 23);
+            this.button4.TabIndex = 5;
+            this.button4.Text = "<";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -314,24 +334,6 @@ namespace Практика_0202
             this.richTextBox2.Size = new System.Drawing.Size(609, 155);
             this.richTextBox2.TabIndex = 2;
             this.richTextBox2.Text = "";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(7, 401);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(32, 23);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "<";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(45, 401);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(32, 23);
-            this.button5.TabIndex = 6;
-            this.button5.Text = ">";
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // Form3
             // 
