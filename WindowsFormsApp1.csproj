@@ -173,5 +173,8 @@
   <ItemGroup>
     <None Include="Resources\pictures\double-left.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\weak.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
