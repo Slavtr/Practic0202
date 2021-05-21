@@ -145,6 +145,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\fonts\furore.ttf" />
     <None Include="Resources\icons\sportbag.png" />
     <None Include="Resources\icons\logo.png" />
     <None Include="Resources\icons\logo text.png" />
