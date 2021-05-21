@@ -172,10 +172,6 @@ namespace WindowsFormsApp1
         {
             get { return @"Data Source=sql;Initial Catalog=2021-МДК02.02-УП-Паламарчук;Integrated Security=True"; }
         }
-        public static string xcl
-        {
-            get { return ""; }
-        }
     }
     public static class UsID
     {
