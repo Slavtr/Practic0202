@@ -88,12 +88,12 @@ namespace WindowsFormsApp1
 
         private void menuForm_Load(object sender, EventArgs e)
         {
-            guna2Button2.Text = UsID.UsNm(CnStrPlmrch.sql);
+            guna2GradientButton1.Text = UsID.UsNm(CnStrPlmrch.sql);
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new Forms.Form1(), sender);
         }
     }
 }

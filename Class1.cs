@@ -15,6 +15,7 @@ namespace WindowsFormsApp1
     public delegate void LoadFormDotShowHere();
     public class LGPlmrch
     {
+        public bool PrUs;
         event LoadFormDotShowHere SbstvLG;
         void ShwSbstvLG()
         {
@@ -25,6 +26,10 @@ namespace WindowsFormsApp1
         {
             SbstvLG += lfdsh;
             CtvFrm(LG(login, Gthshps(password), sql));
+        }
+        public LGPlmrch(string login, string password, string sql)
+        {
+            PrUs = PrSr(LG(login, Gthshps(password), sql));
         }
         int Gthshps(string password)
         {
@@ -59,6 +64,13 @@ namespace WindowsFormsApp1
             if (strCnt != -1) ShwSbstvLG();
             else MessageBox.Show("Неправильный логин или пароль.\nПовторите ввод.");
         }
+        bool PrSr(int rowsaff)
+        {
+            if (rowsaff != -1)
+                return true;
+            else
+                return false;
+        }
     }
     public static class PSCPlmrch
     {
@@ -82,7 +94,7 @@ namespace WindowsFormsApp1
         bool RGCheck(string login, int password, string sql)
         {
             bool ret = false;
-            int rowsaff = 0;
+            int rowsaff = -1;
             SqlConnection sq = new SqlConnection(sql);
             SqlCommand cm = new SqlCommand(@"select count(*) from dbo.[User] where Login = @LG or Password = @PS", sq);
             cm.Parameters.AddWithValue("@LG", login);
@@ -108,6 +120,10 @@ namespace WindowsFormsApp1
             try
             {
                 sq.Open();
+                if(cm.ExecuteScalar() == null)
+                {
+                    return 0;
+                }
                 lastind = (int)cm.ExecuteScalar();
                 sq.Close();
             }
@@ -333,22 +349,19 @@ namespace WindowsFormsApp1
         public int[] IDMs;
         public CchZp(string sql)
         {
-            this.IDMs = IDMsZp(sql);
+            List<int> ar = IDMsZp(sql);
+            this.IDMs = ar.ToArray();
         }
-        int[] IDMsZp(string sql)
+        List<int> IDMsZp(string sql)
         {
-            int[] ret = new int[0];
+            List<int> ret = new List<int>();
             SqlConnection sq = new SqlConnection(sql);
             SqlCommand cm = new SqlCommand(@"select ID from dbo.[Coach]", sq);
             try
             {
                 sq.Open();
                 SqlDataReader dr = cm.ExecuteReader();
-                while (dr.Read())
-                {
-                    Array.Resize(ref ret, ret.Length + 1);
-                    ret[ret.Length - 1] = (int)dr[ret.Length - 1];
-                }
+                ret = (from IDataRecord r in dr select (int)r["ID"]).ToList();
                 sq.Close();
             }
             catch(Exception e)
@@ -430,6 +443,41 @@ namespace WindowsFormsApp1
                 MessageBox.Show(e.Message);
             }
             return ret;
+        }
+    }
+    public class ZmDnPlz
+    {
+        public ZmDnPlz(string login, string password, string newSurname, string newName, string newPatronus, string newLogin, string newPassword, string sql)
+        {
+            LGPlmrch lg = new LGPlmrch(login, password, sql);
+            ChngDt(lg, sql, newSurname, newName, newPatronus, newLogin, newPassword);
+        }
+        void ChngDt(LGPlmrch lg, string sql, string newSurname, string newName, string newPatronus, string newLogin, string newPassword)
+        {
+            if (lg.PrUs)
+            {
+                PSCPlmrch.password = newPassword;
+                SqlConnection sq = new SqlConnection(sql);
+                SqlCommand cm = new SqlCommand(@"update dbo.[User] set dbo.[User].Surname = @NS, dbo.[User].Name = @NN, dbo.[User].Patronymic = @NPr, dbo.[User].Login = @NL, dbo.[User].Password = @NPs where dbo.[User].ID = @ID", sq);
+                cm.Parameters.AddWithValue("@NS", newSurname);
+                cm.Parameters.AddWithValue("@NN", newName);
+                cm.Parameters.AddWithValue("@NPr", newPatronus);
+                cm.Parameters.AddWithValue("@NL", newLogin);
+                cm.Parameters.AddWithValue("@NPs", PSCPlmrch.PasCrypt);
+                cm.Parameters.AddWithValue("@ID", UsID.ID);
+                try
+                {
+                    sq.Open();
+                    cm.ExecuteNonQuery();
+                    sq.Close();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+            }
+            else
+                MessageBox.Show("Введены неверные данные авторизации");
         }
     }
 }

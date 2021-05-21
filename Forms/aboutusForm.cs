@@ -21,49 +21,50 @@ namespace WindowsFormsApp1.Forms
 
         private void aboutusForm_Load(object sender, EventArgs e)
         {
-            if (Cnb >= cz.IDMs.Length) this.Cnb = 0;
-            if (Cnb < 0) this.Cnb = 0;
+            this.Cnb = cz.IDMs[0];
+            if (Cnb > cz.IDMs.Last()) this.Cnb = cz.IDMs[0];
+            if (Cnb < cz.IDMs[0]) this.Cnb = cz.IDMs.Last();
             try
             {
                 pictureBox1.Image = Image.FromStream(cz.PhZp(CnStrPlmrch.sql, Cnb));
             }
             catch
             { }
-            label5.Text = cz.FIOZp(CnStrPlmrch.sql, Cnb);
+            label1.Text = cz.FIOZp(CnStrPlmrch.sql, Cnb);
             richTextBox2.Text = cz.FllPsn(CnStrPlmrch.sql, Cnb);
-            label4.Text = "Цена: " + cz.CZp(CnStrPlmrch.sql, Cnb).ToString();
+            label2.Text = cz.CZp(CnStrPlmrch.sql, Cnb).ToString() + " руб";
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             this.Cnb++;
-            if (Cnb >= cz.IDMs.Length) Cnb = 0;
-            if (Cnb < 0) this.Cnb = 0;
+            if (Cnb > cz.IDMs.Last()) Cnb = cz.IDMs[0];
+            if (Cnb < cz.IDMs[0]) this.Cnb = cz.IDMs.Last();
             try
             {
                 pictureBox1.Image = Image.FromStream(cz.PhZp(CnStrPlmrch.sql, Cnb));
             }
             catch
             { }
-            label5.Text = cz.FIOZp(CnStrPlmrch.sql, Cnb);
+            label1.Text = cz.FIOZp(CnStrPlmrch.sql, Cnb);
             richTextBox2.Text = cz.FllPsn(CnStrPlmrch.sql, Cnb);
-            label4.Text = "Цена: " + cz.CZp(CnStrPlmrch.sql, Cnb).ToString();
+            label2.Text = cz.CZp(CnStrPlmrch.sql, Cnb).ToString() + " руб";
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             this.Cnb--;
-            if (Cnb >= cz.IDMs.Length) Cnb = 0;
-            if (Cnb < 0) this.Cnb = 0;
+            if (Cnb > cz.IDMs.Last()) this.Cnb = cz.IDMs[0];
+            if (Cnb < cz.IDMs[0]) this.Cnb = cz.IDMs.Last();
             try
             {
                 pictureBox1.Image = Image.FromStream(cz.PhZp(CnStrPlmrch.sql, Cnb));
             }
             catch
             { }
-            label5.Text = cz.FIOZp(CnStrPlmrch.sql, Cnb);
+            label1.Text = cz.FIOZp(CnStrPlmrch.sql, Cnb);
             richTextBox2.Text = cz.FllPsn(CnStrPlmrch.sql, Cnb);
-            label4.Text = "Цена: " + cz.CZp(CnStrPlmrch.sql, Cnb).ToString();
+            label2.Text = cz.CZp(CnStrPlmrch.sql, Cnb).ToString() + " руб";
         }
     }
 }

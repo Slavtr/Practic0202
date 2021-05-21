@@ -28,6 +28,7 @@ namespace WindowsFormsApp1.Forms
 
         private void enterButton_Click(object sender, EventArgs e)
         {
+            label1.Text = "";
             try
             {
                 if (passTextBox1.Text != passTextBox2.Text)
@@ -40,10 +41,13 @@ namespace WindowsFormsApp1.Forms
             {
                 label1.Text = exc.Message;
             }
-            menuForm au = new menuForm();
-            LoadFormDotShowHere fs = au.Show;
-            fs += this.Hide;
-            LGPlmrch lg = new LGPlmrch(emailTextBox.Text, passTextBox1.Text, CnStrPlmrch.sql, fs);
+            if (label1.Text == "")
+            {
+                menuForm au = new menuForm();
+                LoadFormDotShowHere fs = au.Show;
+                fs += this.Hide;
+                LGPlmrch lg = new LGPlmrch(emailTextBox.Text, passTextBox1.Text, CnStrPlmrch.sql, fs);
+            }
         }
 
         private void emailTextBox_Enter(object sender, EventArgs e)
