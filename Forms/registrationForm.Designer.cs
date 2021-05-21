@@ -30,6 +30,7 @@ namespace WindowsFormsApp1.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(registrationForm));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -210,7 +211,7 @@ namespace WindowsFormsApp1.Forms
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(174, 53);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(265, 35);
+            this.label4.Size = new System.Drawing.Size(265, 36);
             this.label4.TabIndex = 24;
             this.label4.Text = "Регистрация";
             // 
@@ -354,6 +355,7 @@ namespace WindowsFormsApp1.Forms
             this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.GradientPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(640, 480);
             this.MinimumSize = new System.Drawing.Size(640, 480);
             this.Name = "registrationForm";

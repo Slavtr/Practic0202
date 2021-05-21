@@ -30,6 +30,7 @@ namespace WindowsFormsApp1.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(authorizationForm));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.enterButton = new Guna.UI2.WinForms.Guna2GradientButton();
             this.passTextBox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -147,7 +148,7 @@ namespace WindowsFormsApp1.Forms
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(25, 65);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(268, 35);
+            this.label4.Size = new System.Drawing.Size(268, 36);
             this.label4.TabIndex = 12;
             this.label4.Text = "Авторизация";
             // 
@@ -225,6 +226,7 @@ namespace WindowsFormsApp1.Forms
             this.Controls.Add(this.enterButton);
             this.Controls.Add(this.guna2GradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(320, 480);
             this.MinimumSize = new System.Drawing.Size(320, 480);
             this.Name = "authorizationForm";
