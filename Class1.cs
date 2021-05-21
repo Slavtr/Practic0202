@@ -94,7 +94,7 @@ namespace WindowsFormsApp1
         bool RGCheck(string login, int password, string sql)
         {
             bool ret = false;
-            int rowsaff = 0;
+            int rowsaff = -1;
             SqlConnection sq = new SqlConnection(sql);
             SqlCommand cm = new SqlCommand(@"select count(*) from dbo.[User] where Login = @LG or Password = @PS", sq);
             cm.Parameters.AddWithValue("@LG", login);
@@ -120,6 +120,10 @@ namespace WindowsFormsApp1
             try
             {
                 sq.Open();
+                if(cm.ExecuteScalar() == null)
+                {
+                    return 0;
+                }
                 lastind = (int)cm.ExecuteScalar();
                 sq.Close();
             }
@@ -345,22 +349,19 @@ namespace WindowsFormsApp1
         public int[] IDMs;
         public CchZp(string sql)
         {
-            this.IDMs = IDMsZp(sql);
+            List<int> ar = IDMsZp(sql);
+            this.IDMs = ar.ToArray();
         }
-        int[] IDMsZp(string sql)
+        List<int> IDMsZp(string sql)
         {
-            int[] ret = new int[0];
+            List<int> ret = new List<int>();
             SqlConnection sq = new SqlConnection(sql);
             SqlCommand cm = new SqlCommand(@"select ID from dbo.[Coach]", sq);
             try
             {
                 sq.Open();
                 SqlDataReader dr = cm.ExecuteReader();
-                while (dr.Read())
-                {
-                    Array.Resize(ref ret, ret.Length + 1);
-                    ret[ret.Length - 1] = (int)dr[ret.Length - 1];
-                }
+                ret = (from IDataRecord r in dr select (int)r["ID"]).ToList();
                 sq.Close();
             }
             catch(Exception e)

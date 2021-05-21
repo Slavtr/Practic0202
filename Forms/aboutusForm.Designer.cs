@@ -118,6 +118,7 @@ namespace WindowsFormsApp1.Forms
             this.button4.Location = new System.Drawing.Point(484, 469);
             this.button4.Name = "button4";
             this.button4.PressedColor = System.Drawing.Color.Transparent;
+            this.button4.PressedDepth = 0;
             this.button4.ShadowDecoration.Parent = this.button4;
             this.button4.Size = new System.Drawing.Size(60, 57);
             this.button4.TabIndex = 8;
