@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1.Forms
 {
-    public partial class Form1 : Form
+    public partial class personalForm : Form
     {
-        public Form1()
+        public personalForm()
         {
             InitializeComponent();
         }
@@ -27,7 +27,7 @@ namespace WindowsFormsApp1.Forms
                     {
                         throw new Exception("Пароль не был правильно повторён");
                     }
-                    ZmDnPlz zm = new ZmDnPlz(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text, CnStrPlmrch.sql);
+                    ZmDnPlz zm = new ZmDnPlz(textBox1.Text, textBox2.Text, textBox4.Text, textBox3.Text, textBox5.Text, textBox6.Text, textBox7.Text, CnStrPlmrch.sql);
                 }
                 catch(Exception ex)
                 {

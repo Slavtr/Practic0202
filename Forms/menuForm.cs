@@ -93,7 +93,7 @@ namespace WindowsFormsApp1
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.Form1(), sender);
+            OpenChildForm(new Forms.personalForm(), sender);
         }
     }
 }
