@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsApp1.Forms
 {
-    partial class Form1
+    partial class personalForm
     {
         /// <summary>
         /// Required designer variable.
